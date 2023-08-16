@@ -2,6 +2,7 @@ import 'package:falaj_user_app/design_models/remember_me_model.dart';
 import 'package:falaj_user_app/screens/signup_screen.dart';
 import 'package:falaj_user_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../utils/my_button.dart';
@@ -35,6 +36,11 @@ class _LoginScreenState extends State<LoginScreen>
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarIconBrightness: Brightness.dark,
+      ),
+    );
     return Scaffold(
       backgroundColor: AppColors.colorWhiteHighEmp,
       body: SafeArea(
@@ -42,7 +48,6 @@ class _LoginScreenState extends State<LoginScreen>
         key: _formField,
         child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding: REdgeInsets.only(top: 76),
@@ -105,228 +110,498 @@ class _LoginScreenState extends State<LoginScreen>
                   indicatorSize: TabBarIndicatorSize.tab,
                 ),
               ),
-              Padding(
-                padding: REdgeInsets.symmetric(horizontal: 16),
-                child: Text(
-                  "Your Email",
-                  style: TextStyle(
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.colorBlackHighEmp,
-                  ),
-                ),
-              ),
-              SizedBox(height: 8.h),
-              Container(
-                width: double.infinity,
-                margin: REdgeInsets.symmetric(horizontal: 16),
-                child: TextFormField(
-                  controller: emailController,
-                  validator: (value) {
-                    bool emailValid = RegExp(
-                            r"^WS{1,2}:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:56789")
-                        .hasMatch(value!);
-                    if (value.isEmpty) {
-                      return "Enter Email";
-                    } else if (emailValid) {
-                      return "Enter valid Email";
-                    }
-                    return null;
-                  },
-                  style: const TextStyle(color: AppColors.colorBlackHighEmp),
-                  decoration: InputDecoration(
-                    hintText: "mail@example.com",
-                    hintStyle: TextStyle(
-                        color: AppColors.colorBlackMidEmp,
-                        fontWeight: FontWeight.w300,
-                        fontSize: 14.sp),
-                    contentPadding: const EdgeInsets.fromLTRB(16, 20, 16, 20),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: const BorderSide(
-                        color: AppColors.colorGreyLight,
-                        width: 1,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: const BorderSide(
-                        color: AppColors.colorGreyLight,
-                        width: 1,
-                      ),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: const BorderSide(
-                        color: AppColors.colorRed,
-                        width: 1,
-                      ),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: const BorderSide(
-                        color: AppColors.colorRed,
-                        width: 1,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 12.h),
-              Padding(
-                padding: REdgeInsets.symmetric(horizontal: 16),
-                child: Text(
-                  "Your Password",
-                  style: TextStyle(
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.colorBlackHighEmp,
-                  ),
-                ),
-              ),
-              SizedBox(height: 8.h),
-              Container(
-                width: double.infinity,
-                margin: REdgeInsets.symmetric(horizontal: 16),
-                child: TextFormField(
-                  controller: passwordController,
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return "Enter Password";
-                    } else if (passwordController.text.length < 6) {
-                      return "Password length should be more than 6 characters";
-                    }
-                  },
-                  style: const TextStyle(color: AppColors.colorBlackHighEmp),
-                  obscureText: obscureText,
-                  decoration: InputDecoration(
-                    hintText: "Password",
-                    hintStyle: TextStyle(
-                        color: AppColors.colorBlackMidEmp,
-                        fontWeight: FontWeight.w300,
-                        fontSize: 14.sp),
-                    suffixIcon: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          obscureText = !obscureText;
-                        });
-                      },
-                      child: obscureText
-                          ? const Icon(Icons.visibility_off,
-                              color: AppColors.colorPrimary, size: 20)
-                          : const Icon(Icons.visibility_outlined,
-                              color: AppColors.colorPrimary, size: 20),
-                    ),
-                    contentPadding: const EdgeInsets.fromLTRB(16, 20, -4, 20),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: const BorderSide(
-                        color: AppColors.colorGreyLight,
-                        width: 1,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: const BorderSide(
-                        color: AppColors.colorGreyLight,
-                        width: 1,
-                      ),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: const BorderSide(
-                        color: AppColors.colorRed,
-                        width: 1,
-                      ),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: const BorderSide(
-                        color: AppColors.colorRed,
-                        width: 1,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: REdgeInsets.symmetric(horizontal: 16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const RememberMeModel(),
-                    TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                          padding: const EdgeInsets.all(8),
-                          minimumSize: const Size(50, 20),
-                          tapTargetSize: MaterialTapTargetSize.shrinkWrap),
-                      child: Text(
-                        'Forgot password?',
-                        style: TextStyle(
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.colorRed,
+              SizedBox(
+                height: 400.h,
+                child: Expanded(
+                  child: TabBarView(
+                    controller: _tabController,
+                    children: [
+                      SizedBox(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: REdgeInsets.symmetric(horizontal: 16),
+                              child: Text(
+                                "Your Email",
+                                style: TextStyle(
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.colorBlackHighEmp,
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 8.h),
+                            Container(
+                              width: double.infinity,
+                              margin: REdgeInsets.symmetric(horizontal: 16),
+                              child: TextFormField(
+                                controller: emailController,
+                                validator: (value) {
+                                  bool emailValid = RegExp(
+                                          r"^WS{1,2}:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:56789")
+                                      .hasMatch(value!);
+                                  if (value.isEmpty) {
+                                    return "Enter Email";
+                                  } else if (emailValid) {
+                                    return "Enter valid Email";
+                                  }
+                                  return null;
+                                },
+                                style: const TextStyle(
+                                    color: AppColors.colorBlackHighEmp),
+                                decoration: InputDecoration(
+                                  hintText: "mail@example.com",
+                                  hintStyle: TextStyle(
+                                      color: AppColors.colorBlackMidEmp,
+                                      fontWeight: FontWeight.w300,
+                                      fontSize: 14.sp),
+                                  contentPadding:
+                                      const EdgeInsets.fromLTRB(16, 20, 16, 20),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: const BorderSide(
+                                      color: AppColors.colorGreyLight,
+                                      width: 1,
+                                    ),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: const BorderSide(
+                                      color: AppColors.colorGreyLight,
+                                      width: 1,
+                                    ),
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: const BorderSide(
+                                      color: AppColors.colorRed,
+                                      width: 1,
+                                    ),
+                                  ),
+                                  focusedErrorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: const BorderSide(
+                                      color: AppColors.colorRed,
+                                      width: 1,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 12.h),
+                            Padding(
+                              padding: REdgeInsets.symmetric(horizontal: 16),
+                              child: Text(
+                                "Your Password",
+                                style: TextStyle(
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.colorBlackHighEmp,
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 8.h),
+                            Container(
+                              width: double.infinity,
+                              margin: REdgeInsets.symmetric(horizontal: 16),
+                              child: TextFormField(
+                                controller: passwordController,
+                                validator: (value) {
+                                  if (value!.isEmpty) {
+                                    return "Enter Password";
+                                  } else if (passwordController.text.length <
+                                      6) {
+                                    return "Password length should be more than 6 characters";
+                                  }
+                                },
+                                style: const TextStyle(
+                                    color: AppColors.colorBlackHighEmp),
+                                obscureText: obscureText,
+                                decoration: InputDecoration(
+                                  hintText: "Password",
+                                  hintStyle: TextStyle(
+                                      color: AppColors.colorBlackMidEmp,
+                                      fontWeight: FontWeight.w300,
+                                      fontSize: 14.sp),
+                                  suffixIcon: GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        obscureText = !obscureText;
+                                      });
+                                    },
+                                    child: obscureText
+                                        ? const Icon(Icons.visibility_off,
+                                            color: AppColors.colorPrimary,
+                                            size: 20)
+                                        : const Icon(Icons.visibility_outlined,
+                                            color: AppColors.colorPrimary,
+                                            size: 20),
+                                  ),
+                                  contentPadding:
+                                      const EdgeInsets.fromLTRB(16, 20, -4, 20),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: const BorderSide(
+                                      color: AppColors.colorGreyLight,
+                                      width: 1,
+                                    ),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: const BorderSide(
+                                      color: AppColors.colorGreyLight,
+                                      width: 1,
+                                    ),
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: const BorderSide(
+                                      color: AppColors.colorRed,
+                                      width: 1,
+                                    ),
+                                  ),
+                                  focusedErrorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: const BorderSide(
+                                      color: AppColors.colorRed,
+                                      width: 1,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: REdgeInsets.symmetric(horizontal: 16),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  const RememberMeModel(),
+                                  TextButton(
+                                    onPressed: () {},
+                                    style: TextButton.styleFrom(
+                                        padding: const EdgeInsets.all(8),
+                                        minimumSize: const Size(50, 20),
+                                        tapTargetSize:
+                                            MaterialTapTargetSize.shrinkWrap),
+                                    child: Text(
+                                      'Forgot password?',
+                                      style: TextStyle(
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: AppColors.colorRed,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: 32.h),
+                            Padding(
+                              padding: REdgeInsets.symmetric(horizontal: 16),
+                              child: MyButton(
+                                  onPressed: () {
+                                    if (_formField.currentState!.validate()) {
+                                      emailController.clear();
+                                      passwordController.clear();
+                                      Navigator.pushAndRemoveUntil<void>(
+                                        context,
+                                        MaterialPageRoute<void>(
+                                            builder: (BuildContext context) =>
+                                                const HomeScreen()),
+                                        ModalRoute.withName('/'),
+                                      );
+                                    }
+                                  },
+                                  text: "Sign In"),
+                            ),
+                            SizedBox(height: 64.h),
+                            Padding(
+                              padding: REdgeInsets.symmetric(horizontal: 16),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Don’t have any account? ",
+                                    style: TextStyle(
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w600,
+                                      color: AppColors.colorBlackHighEmp,
+                                    ),
+                                  ),
+                                  TextButton(
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const SignupScreen()));
+                                    },
+                                    style: TextButton.styleFrom(
+                                        padding: const EdgeInsets.all(8),
+                                        minimumSize: const Size(50, 20),
+                                        tapTargetSize:
+                                            MaterialTapTargetSize.shrinkWrap),
+                                    child: Text(
+                                      'Register now',
+                                      style: TextStyle(
+                                        fontSize: 14.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: AppColors.colorPrimary,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 32.h),
-              Padding(
-                padding: REdgeInsets.symmetric(horizontal: 16),
-                child: MyButton(
-                    onPressed: () {
-                      if (_formField.currentState!.validate()) {
-                        emailController.clear();
-                        passwordController.clear();
-                        Navigator.pushAndRemoveUntil<void>(
-                          context,
-                          MaterialPageRoute<void>(
-                              builder: (BuildContext context) =>
-                                  const HomeScreen()),
-                          ModalRoute.withName('/'),
-                        );
-                      }
-                    },
-                    text: "Sign In"),
-              ),
-              SizedBox(height: 64.h),
-              Padding(
-                padding: REdgeInsets.symmetric(horizontal: 16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Don’t have any account? ",
-                      style: TextStyle(
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.colorBlackHighEmp,
-                      ),
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const SignupScreen()));
-                      },
-                      style: TextButton.styleFrom(
-                          padding: const EdgeInsets.all(8),
-                          minimumSize: const Size(50, 20),
-                          tapTargetSize: MaterialTapTargetSize.shrinkWrap),
-                      child: Text(
-                        'Register now',
-                        style: TextStyle(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.colorPrimary,
+                      SizedBox(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: REdgeInsets.symmetric(horizontal: 16),
+                              child: Text(
+                                "Your Email",
+                                style: TextStyle(
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.colorBlackHighEmp,
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 8.h),
+                            Container(
+                              width: double.infinity,
+                              margin: REdgeInsets.symmetric(horizontal: 16),
+                              child: TextFormField(
+                                controller: emailController,
+                                validator: (value) {
+                                  bool emailValid = RegExp(
+                                          r"^WS{1,2}:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:56789")
+                                      .hasMatch(value!);
+                                  if (value.isEmpty) {
+                                    return "Enter Email";
+                                  } else if (emailValid) {
+                                    return "Enter valid Email";
+                                  }
+                                  return null;
+                                },
+                                style: const TextStyle(
+                                    color: AppColors.colorBlackHighEmp),
+                                decoration: InputDecoration(
+                                  hintText: "mail@example.com",
+                                  hintStyle: TextStyle(
+                                      color: AppColors.colorBlackMidEmp,
+                                      fontWeight: FontWeight.w300,
+                                      fontSize: 14.sp),
+                                  contentPadding:
+                                      const EdgeInsets.fromLTRB(16, 20, 16, 20),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: const BorderSide(
+                                      color: AppColors.colorGreyLight,
+                                      width: 1,
+                                    ),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: const BorderSide(
+                                      color: AppColors.colorGreyLight,
+                                      width: 1,
+                                    ),
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: const BorderSide(
+                                      color: AppColors.colorRed,
+                                      width: 1,
+                                    ),
+                                  ),
+                                  focusedErrorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: const BorderSide(
+                                      color: AppColors.colorRed,
+                                      width: 1,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 12.h),
+                            Padding(
+                              padding: REdgeInsets.symmetric(horizontal: 16),
+                              child: Text(
+                                "Your Password",
+                                style: TextStyle(
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.colorBlackHighEmp,
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 8.h),
+                            Container(
+                              width: double.infinity,
+                              margin: REdgeInsets.symmetric(horizontal: 16),
+                              child: TextFormField(
+                                controller: passwordController,
+                                validator: (value) {
+                                  if (value!.isEmpty) {
+                                    return "Enter Password";
+                                  } else if (passwordController.text.length <
+                                      6) {
+                                    return "Password length should be more than 6 characters";
+                                  }
+                                },
+                                style: const TextStyle(
+                                    color: AppColors.colorBlackHighEmp),
+                                obscureText: obscureText,
+                                decoration: InputDecoration(
+                                  hintText: "Password",
+                                  hintStyle: TextStyle(
+                                      color: AppColors.colorBlackMidEmp,
+                                      fontWeight: FontWeight.w300,
+                                      fontSize: 14.sp),
+                                  suffixIcon: GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        obscureText = !obscureText;
+                                      });
+                                    },
+                                    child: obscureText
+                                        ? const Icon(Icons.visibility_off,
+                                            color: AppColors.colorPrimary,
+                                            size: 20)
+                                        : const Icon(Icons.visibility_outlined,
+                                            color: AppColors.colorPrimary,
+                                            size: 20),
+                                  ),
+                                  contentPadding:
+                                      const EdgeInsets.fromLTRB(16, 20, -4, 20),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: const BorderSide(
+                                      color: AppColors.colorGreyLight,
+                                      width: 1,
+                                    ),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: const BorderSide(
+                                      color: AppColors.colorGreyLight,
+                                      width: 1,
+                                    ),
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: const BorderSide(
+                                      color: AppColors.colorRed,
+                                      width: 1,
+                                    ),
+                                  ),
+                                  focusedErrorBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                    borderSide: const BorderSide(
+                                      color: AppColors.colorRed,
+                                      width: 1,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: REdgeInsets.symmetric(horizontal: 16),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  const RememberMeModel(),
+                                  TextButton(
+                                    onPressed: () {},
+                                    style: TextButton.styleFrom(
+                                        padding: const EdgeInsets.all(8),
+                                        minimumSize: const Size(50, 20),
+                                        tapTargetSize:
+                                            MaterialTapTargetSize.shrinkWrap),
+                                    child: Text(
+                                      'Forgot password?',
+                                      style: TextStyle(
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: AppColors.colorRed,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: 32.h),
+                            Padding(
+                              padding: REdgeInsets.symmetric(horizontal: 16),
+                              child: MyButton(
+                                  onPressed: () {
+                                    if (_formField.currentState!.validate()) {
+                                      emailController.clear();
+                                      passwordController.clear();
+                                      Navigator.pushAndRemoveUntil<void>(
+                                        context,
+                                        MaterialPageRoute<void>(
+                                            builder: (BuildContext context) =>
+                                                const HomeScreen()),
+                                        ModalRoute.withName('/'),
+                                      );
+                                    }
+                                  },
+                                  text: "Sign In"),
+                            ),
+                            SizedBox(height: 64.h),
+                            Padding(
+                              padding: REdgeInsets.symmetric(horizontal: 16),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Don’t have any account? ",
+                                    style: TextStyle(
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w600,
+                                      color: AppColors.colorBlackHighEmp,
+                                    ),
+                                  ),
+                                  TextButton(
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const SignupScreen()));
+                                    },
+                                    style: TextButton.styleFrom(
+                                        padding: const EdgeInsets.all(8),
+                                        minimumSize: const Size(50, 20),
+                                        tapTargetSize:
+                                            MaterialTapTargetSize.shrinkWrap),
+                                    child: Text(
+                                      'Register now',
+                                      style: TextStyle(
+                                        fontSize: 14.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: AppColors.colorPrimary,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],
