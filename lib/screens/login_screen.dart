@@ -1,3 +1,4 @@
+import 'package:falaj_user_app/design_models/remember_me_model.dart';
 import 'package:falaj_user_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -38,209 +39,292 @@ class _LoginScreenState extends State<LoginScreen>
       body: SafeArea(
           child: Form(
         key: _formField,
-        child: Column(
-          children: [
-            Padding(
-              padding: REdgeInsets.only(top: 76),
-              child: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: REdgeInsets.only(top: 76),
+                child: Center(
+                  child: Text(
+                    "Welcome Back",
+                    style: TextStyle(
+                      fontSize: 24.sp,
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.colorBlackHighEmp,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: REdgeInsets.only(top: 4),
+                child: Center(
+                  child: Text(
+                    "To your favorite Book app.",
+                    style: TextStyle(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.colorBlackLowEmp,
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                height: 57.h,
+                decoration: BoxDecoration(
+                    color: AppColors.colorGrey,
+                    borderRadius: BorderRadius.circular(16)),
+                margin:
+                    REdgeInsets.only(top: 24, right: 16, left: 16, bottom: 40),
+                padding: REdgeInsets.symmetric(horizontal: 6.w, vertical: 6.h),
+                child: TabBar(
+                  indicator: const BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(16),
+                        bottomRight: Radius.circular(16),
+                        topLeft: Radius.circular(16),
+                        bottomLeft: Radius.circular(16),
+                      ),
+                      color: AppColors.colorWhiteHighEmp),
+                  dividerColor: Colors.transparent,
+                  unselectedLabelColor: AppColors.colorBlackHighEmp,
+                  labelStyle: const TextStyle(),
+                  labelColor: AppColors.colorPrimary,
+                  tabs: const [
+                    Tab(
+                        child: Text(
+                      "Owner",
+                    )),
+                    Tab(
+                        child: Text(
+                      "User",
+                    )),
+                  ],
+                  controller: _tabController,
+                  indicatorSize: TabBarIndicatorSize.tab,
+                ),
+              ),
+              Padding(
+                padding: REdgeInsets.symmetric(horizontal: 16),
                 child: Text(
-                  "Welcome Back",
+                  "Your Email",
                   style: TextStyle(
-                    fontSize: 24.sp,
-                    fontWeight: FontWeight.w700,
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w600,
                     color: AppColors.colorBlackHighEmp,
                   ),
                 ),
               ),
-            ),
-            Padding(
-              padding: REdgeInsets.only(top: 4),
-              child: Center(
+              SizedBox(height: 8.h),
+              Container(
+                width: double.infinity,
+                margin: REdgeInsets.symmetric(horizontal: 16),
+                child: TextFormField(
+                  controller: emailController,
+                  validator: (value) {
+                    bool emailValid = RegExp(
+                            r"^WS{1,2}:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:56789")
+                        .hasMatch(value!);
+                    if (value.isEmpty) {
+                      return "Enter Email";
+                    } else if (emailValid) {
+                      return "Enter valid Email";
+                    }
+                    return null;
+                  },
+                  style: const TextStyle(color: AppColors.colorBlackHighEmp),
+                  decoration: InputDecoration(
+                    hintText: "mail@example.com",
+                    hintStyle: TextStyle(
+                        color: AppColors.colorBlackMidEmp,
+                        fontWeight: FontWeight.w300,
+                        fontSize: 14.sp),
+                    contentPadding: const EdgeInsets.fromLTRB(16, 20, 16, 20),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: const BorderSide(
+                        color: AppColors.colorGreyLight,
+                        width: 1,
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: const BorderSide(
+                        color: AppColors.colorGreyLight,
+                        width: 1,
+                      ),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: const BorderSide(
+                        color: AppColors.colorRed,
+                        width: 1,
+                      ),
+                    ),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: const BorderSide(
+                        color: AppColors.colorRed,
+                        width: 1,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 12.h),
+              Padding(
+                padding: REdgeInsets.symmetric(horizontal: 16),
                 child: Text(
-                  "To your favorite Book app.",
+                  "Your Password",
                   style: TextStyle(
                     fontSize: 14.sp,
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.colorBlackLowEmp,
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.colorBlackHighEmp,
                   ),
                 ),
               ),
-            ),
-            Container(
-              height: 57.h,
-              decoration: BoxDecoration(
-                  color: AppColors.colorGrey,
-                  borderRadius: BorderRadius.circular(16)),
-              margin:
-                  REdgeInsets.only(top: 24, right: 16, left: 16, bottom: 40),
-              padding: REdgeInsets.symmetric(horizontal: 6.w, vertical: 6.h),
-              child: TabBar(
-                indicator: const BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(16),
-                      bottomRight: Radius.circular(16),
-                      topLeft: Radius.circular(16),
-                      bottomLeft: Radius.circular(16),
-                    ),
-                    color: AppColors.colorWhiteHighEmp),
-                dividerColor: Colors.transparent,
-                unselectedLabelColor: AppColors.colorBlackHighEmp,
-                labelStyle: const TextStyle(),
-                labelColor: AppColors.colorPrimary,
-                tabs: const [
-                  Tab(
-                      child: Text(
-                    "Owner",
-                  )),
-                  Tab(
-                      child: Text(
-                    "User",
-                  )),
-                ],
-                controller: _tabController,
-                indicatorSize: TabBarIndicatorSize.tab,
-              ),
-            ),
-            Container(
-              width: double.infinity,
-              margin: REdgeInsets.symmetric(horizontal: 16),
-              child: TextFormField(
-                controller: emailController,
-                validator: (value) {
-                  bool emailValid = RegExp(
-                          r"^WS{1,2}:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:56789")
-                      .hasMatch(value!);
-                  if (value.isEmpty) {
-                    return "Enter Email";
-                  } else if (emailValid) {
-                    return "Enter valid Email";
-                  }
-                  return null;
-                },
-                style: const TextStyle(color: AppColors.colorBlackHighEmp),
-                decoration: InputDecoration(
-                  labelText: "mail@example.com",
-                  labelStyle: TextStyle(
-                      color: AppColors.colorBlackMidEmp,
-                      fontWeight: FontWeight.w300,
-                      fontSize: 14.sp),
-                  contentPadding: const EdgeInsets.fromLTRB(16, 20, 16, 20),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: const BorderSide(
-                      color: AppColors.colorGreyLight,
-                      width: 1,
-                    ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: const BorderSide(
-                      color: AppColors.colorGreyLight,
-                      width: 1,
-                    ),
-                  ),
-                  errorBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: const BorderSide(
-                      color: AppColors.colorRed,
-                      width: 1,
-                    ),
-                  ),
-                  focusedErrorBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: const BorderSide(
-                      color: AppColors.colorRed,
-                      width: 1,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 16.h),
-            Container(
-              width: double.infinity,
-              margin: REdgeInsets.symmetric(horizontal: 16),
-              child: TextFormField(
-                controller: passwordController,
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return "Enter Password";
-                  } else if (passwordController.text.length < 6) {
-                    return "Password length should be more than 6 characters";
-                  }
-                },
-                style: const TextStyle(color: AppColors.colorBlackHighEmp),
-                obscureText: obscureText,
-                decoration: InputDecoration(
-                  labelText: "Password",
-                  labelStyle: TextStyle(
-                      color: AppColors.colorBlackMidEmp,
-                      fontWeight: FontWeight.w300,
-                      fontSize: 14.sp),
-                  suffixIcon: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        obscureText = !obscureText;
-                      });
-                    },
-                    child: obscureText
-                        ? const Icon(Icons.visibility_off,
-                            color: AppColors.colorPrimary, size: 20)
-                        : const Icon(Icons.visibility_outlined,
-                            color: AppColors.colorPrimary, size: 20),
-                  ),
-                  contentPadding: const EdgeInsets.fromLTRB(16, 20, -4, 20),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: const BorderSide(
-                      color: AppColors.colorGreyLight,
-                      width: 1,
-                    ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: const BorderSide(
-                      color: AppColors.colorGreyLight,
-                      width: 1,
-                    ),
-                  ),
-                  errorBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: const BorderSide(
-                      color: AppColors.colorRed,
-                      width: 1,
-                    ),
-                  ),
-                  focusedErrorBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: const BorderSide(
-                      color: AppColors.colorRed,
-                      width: 1,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 24.h),
-            Padding(
-              padding: REdgeInsets.symmetric(horizontal: 16),
-              child: MyButton(
-                  onPressed: () {
-                    if (_formField.currentState!.validate()) {
-                      emailController.clear();
-                      passwordController.clear();
-                      Navigator.pushAndRemoveUntil<void>(
-                        context,
-                        MaterialPageRoute<void>(
-                            builder: (BuildContext context) =>
-                                const HomeScreen()),
-                        ModalRoute.withName('/'),
-                      );
+              SizedBox(height: 8.h),
+              Container(
+                width: double.infinity,
+                margin: REdgeInsets.symmetric(horizontal: 16),
+                child: TextFormField(
+                  controller: passwordController,
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return "Enter Password";
+                    } else if (passwordController.text.length < 6) {
+                      return "Password length should be more than 6 characters";
                     }
                   },
-                  text: "Sign In"),
-            ),
-          ],
+                  style: const TextStyle(color: AppColors.colorBlackHighEmp),
+                  obscureText: obscureText,
+                  decoration: InputDecoration(
+                    hintText: "Password",
+                    hintStyle: TextStyle(
+                        color: AppColors.colorBlackMidEmp,
+                        fontWeight: FontWeight.w300,
+                        fontSize: 14.sp),
+                    suffixIcon: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          obscureText = !obscureText;
+                        });
+                      },
+                      child: obscureText
+                          ? const Icon(Icons.visibility_off,
+                              color: AppColors.colorPrimary, size: 20)
+                          : const Icon(Icons.visibility_outlined,
+                              color: AppColors.colorPrimary, size: 20),
+                    ),
+                    contentPadding: const EdgeInsets.fromLTRB(16, 20, -4, 20),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: const BorderSide(
+                        color: AppColors.colorGreyLight,
+                        width: 1,
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: const BorderSide(
+                        color: AppColors.colorGreyLight,
+                        width: 1,
+                      ),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: const BorderSide(
+                        color: AppColors.colorRed,
+                        width: 1,
+                      ),
+                    ),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: const BorderSide(
+                        color: AppColors.colorRed,
+                        width: 1,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: REdgeInsets.symmetric(horizontal: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const RememberMeModel(),
+                    TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(
+                          padding: const EdgeInsets.all(8),
+                          minimumSize: const Size(50, 20),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap),
+                      child: Text(
+                        'Forgot password?',
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.colorRed,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 32.h),
+              Padding(
+                padding: REdgeInsets.symmetric(horizontal: 16),
+                child: MyButton(
+                    onPressed: () {
+                      if (_formField.currentState!.validate()) {
+                        emailController.clear();
+                        passwordController.clear();
+                        Navigator.pushAndRemoveUntil<void>(
+                          context,
+                          MaterialPageRoute<void>(
+                              builder: (BuildContext context) =>
+                                  const HomeScreen()),
+                          ModalRoute.withName('/'),
+                        );
+                      }
+                    },
+                    text: "Sign In"),
+              ),
+              SizedBox(height: 64.h),
+              Padding(
+                padding: REdgeInsets.symmetric(horizontal: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Don’t have any account? ",
+                      style: TextStyle(
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.colorBlackHighEmp,
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(
+                          padding: const EdgeInsets.all(8),
+                          minimumSize: const Size(50, 20),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap),
+                      child: Text(
+                        'Register now',
+                        style: TextStyle(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.colorPrimary,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       )),
     );
