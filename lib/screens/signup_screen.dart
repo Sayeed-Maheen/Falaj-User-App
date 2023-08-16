@@ -1,4 +1,7 @@
+import 'package:dotted_border/dotted_border.dart';
+import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:falaj_user_app/utils/app_colors.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,12 +21,20 @@ class _SignupScreenState extends State<SignupScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
   final _formField = GlobalKey<FormState>();
-  final nameController = TextEditingController();
-  final emailController = TextEditingController();
-  final createPasswordController = TextEditingController();
-  final confirmPasswordController = TextEditingController();
-  var obscureText = true;
-  var obscureText2 = true;
+  final userNameController = TextEditingController();
+  final userEmailController = TextEditingController();
+  final userCreatePasswordController = TextEditingController();
+  final userConfirmPasswordController = TextEditingController();
+  var userObscureText = true;
+  var userObscureText2 = true;
+
+  final ownerNameController = TextEditingController();
+  final ownerEmailController = TextEditingController();
+  final ownerCreatePasswordController = TextEditingController();
+  final ownerConfirmPasswordController = TextEditingController();
+  var ownerObscureText = true;
+  var ownerObscureText2 = true;
+
   @override
   void initState() {
     _tabController = TabController(length: 2, vsync: this);
@@ -158,6 +169,27 @@ class _SignupScreenState extends State<SignupScreen>
     );
   }
 
+  final List<String> falajName = [
+    'Name 1',
+    'Name 2',
+    'Name 3',
+  ];
+  String? selectedFalajName;
+
+  String _filePath = 'No file selected';
+
+  Future<void> _pickFile() async {
+    FilePickerResult? result = await FilePicker.platform.pickFiles();
+
+    if (result != null) {
+      setState(() {
+        _filePath = result.files.single.path!;
+      });
+    } else {
+      // User canceled the picker
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
@@ -235,7 +267,7 @@ class _SignupScreenState extends State<SignupScreen>
                 ),
               ),
               SizedBox(
-                height: 450.h,
+                height: 700.h,
                 child: Expanded(
                   child: TabBarView(
                     controller: _tabController,
@@ -260,7 +292,7 @@ class _SignupScreenState extends State<SignupScreen>
                               width: double.infinity,
                               margin: REdgeInsets.symmetric(horizontal: 16),
                               child: TextFormField(
-                                controller: nameController,
+                                controller: ownerNameController,
                                 validator: (value) {
                                   bool emailValid = RegExp(
                                           r"^WS{1,2}:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:56789")
@@ -281,7 +313,7 @@ class _SignupScreenState extends State<SignupScreen>
                                       fontWeight: FontWeight.w300,
                                       fontSize: 14.sp),
                                   contentPadding:
-                                      const EdgeInsets.fromLTRB(16, 20, 16, 20),
+                                      const EdgeInsets.fromLTRB(16, 16, 16, 16),
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(8),
                                     borderSide: const BorderSide(
@@ -330,7 +362,7 @@ class _SignupScreenState extends State<SignupScreen>
                               width: double.infinity,
                               margin: REdgeInsets.symmetric(horizontal: 16),
                               child: TextFormField(
-                                controller: emailController,
+                                controller: ownerEmailController,
                                 validator: (value) {
                                   bool emailValid = RegExp(
                                           r"^WS{1,2}:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:56789")
@@ -351,7 +383,7 @@ class _SignupScreenState extends State<SignupScreen>
                                       fontWeight: FontWeight.w300,
                                       fontSize: 14.sp),
                                   contentPadding:
-                                      const EdgeInsets.fromLTRB(16, 20, 16, 20),
+                                      const EdgeInsets.fromLTRB(16, 16, 16, 16),
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(8),
                                     borderSide: const BorderSide(
@@ -400,11 +432,11 @@ class _SignupScreenState extends State<SignupScreen>
                               width: double.infinity,
                               margin: REdgeInsets.symmetric(horizontal: 16),
                               child: TextFormField(
-                                controller: createPasswordController,
+                                controller: ownerCreatePasswordController,
                                 validator: (value) {
                                   if (value!.isEmpty) {
                                     return "Enter Password";
-                                  } else if (createPasswordController
+                                  } else if (ownerCreatePasswordController
                                           .text.length <
                                       6) {
                                     return "Password length should be more than 6 characters";
@@ -412,7 +444,7 @@ class _SignupScreenState extends State<SignupScreen>
                                 },
                                 style: const TextStyle(
                                     color: AppColors.colorBlackHighEmp),
-                                obscureText: obscureText,
+                                obscureText: ownerObscureText,
                                 decoration: InputDecoration(
                                   hintText: "Password",
                                   hintStyle: TextStyle(
@@ -422,10 +454,10 @@ class _SignupScreenState extends State<SignupScreen>
                                   suffixIcon: GestureDetector(
                                     onTap: () {
                                       setState(() {
-                                        obscureText = !obscureText;
+                                        ownerObscureText = !ownerObscureText;
                                       });
                                     },
-                                    child: obscureText
+                                    child: ownerObscureText
                                         ? const Icon(Icons.visibility_off,
                                             color: AppColors.colorPrimary,
                                             size: 20)
@@ -434,7 +466,7 @@ class _SignupScreenState extends State<SignupScreen>
                                             size: 20),
                                   ),
                                   contentPadding:
-                                      const EdgeInsets.fromLTRB(16, 20, -4, 20),
+                                      const EdgeInsets.fromLTRB(16, 16, -4, 16),
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(8),
                                     borderSide: const BorderSide(
@@ -483,11 +515,11 @@ class _SignupScreenState extends State<SignupScreen>
                               width: double.infinity,
                               margin: REdgeInsets.symmetric(horizontal: 16),
                               child: TextFormField(
-                                controller: confirmPasswordController,
+                                controller: ownerConfirmPasswordController,
                                 validator: (value) {
                                   if (value!.isEmpty) {
                                     return "Enter Password";
-                                  } else if (createPasswordController
+                                  } else if (ownerCreatePasswordController
                                           .text.length <
                                       6) {
                                     return "Password length should be more than 6 characters";
@@ -495,7 +527,7 @@ class _SignupScreenState extends State<SignupScreen>
                                 },
                                 style: const TextStyle(
                                     color: AppColors.colorBlackHighEmp),
-                                obscureText: obscureText2,
+                                obscureText: ownerObscureText2,
                                 decoration: InputDecoration(
                                   hintText: "Password",
                                   hintStyle: TextStyle(
@@ -505,10 +537,10 @@ class _SignupScreenState extends State<SignupScreen>
                                   suffixIcon: GestureDetector(
                                     onTap: () {
                                       setState(() {
-                                        obscureText2 = !obscureText2;
+                                        ownerObscureText2 = !ownerObscureText2;
                                       });
                                     },
-                                    child: obscureText2
+                                    child: ownerObscureText2
                                         ? const Icon(Icons.visibility_off,
                                             color: AppColors.colorPrimary,
                                             size: 20)
@@ -517,7 +549,7 @@ class _SignupScreenState extends State<SignupScreen>
                                             size: 20),
                                   ),
                                   contentPadding:
-                                      const EdgeInsets.fromLTRB(16, 20, -4, 20),
+                                      const EdgeInsets.fromLTRB(16, 16, -4, 16),
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(8),
                                     borderSide: const BorderSide(
@@ -549,16 +581,125 @@ class _SignupScreenState extends State<SignupScreen>
                                 ),
                               ),
                             ),
+                            SizedBox(height: 12.h),
+                            Padding(
+                              padding: REdgeInsets.symmetric(horizontal: 16),
+                              child: Text(
+                                "Falaj name",
+                                style: TextStyle(
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.colorBlackHighEmp,
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 8.h),
+                            Container(
+                              height: 46.h,
+                              width: double.infinity,
+                              margin: REdgeInsets.symmetric(horizontal: 16),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(
+                                  color: AppColors.colorGrey,
+                                ),
+                              ),
+                              child: FormField<String>(
+                                builder: (FormFieldState<String> state) {
+                                  return DropdownButtonHideUnderline(
+                                    child: DropdownButton2(
+                                      buttonStyleData: const ButtonStyleData(
+                                        padding: EdgeInsets.symmetric(horizontal: 16),
+                                        height: 40,
+                                        width: 140,
+                                      ),
+                                      hint: Text(
+                                        'Select one',
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                          color: Theme.of(context).hintColor,
+                                        ),
+                                      ),
+                                      items: falajName
+                                          .map((item) => DropdownMenuItem<String>(
+                                        value: item,
+                                        child: Text(
+                                          item,
+                                          style: const TextStyle(
+                                            fontSize: 14,
+                                          ),
+                                        ),
+                                      ))
+                                          .toList(),
+                                      value: selectedFalajName,
+                                      onChanged: (value) {
+                                        setState(() {
+                                          selectedFalajName = value as String;
+                                          state.didChange(value);
+                                        });
+                                      },
+                                      menuItemStyleData: const MenuItemStyleData(
+                                        height: 40,
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ),
+                            ),
+                            SizedBox(height: 12.h),
+                            Padding(
+                              padding: REdgeInsets.symmetric(horizontal: 16),
+                              child: Text(
+                                "Legal Documents",
+                                style: TextStyle(
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.colorBlackHighEmp,
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 8.h),
+                            Padding(
+                              padding: REdgeInsets.symmetric(horizontal: 16),
+                              child: InkWell(
+                                onTap: _pickFile,
+                                child: DottedBorder(
+                                    borderType: BorderType.RRect,
+                                    radius: const Radius.circular(12),
+                                    dashPattern: const [5, 5],
+                                    color: AppColors.colorPrimary,
+                                    strokeWidth: 1.5,
+                                    child: Container(
+                                      height: 71.h,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(12)
+                                      ),
+                                      child: Center(child: Text(
+                                        "Upload here",
+                                        style: TextStyle(
+                                          fontSize: 18.sp,
+                                          fontWeight: FontWeight.w600,
+                                          color: AppColors.colorPrimary,
+                                        ),
+                                      ),),
+                                    ),),
+                              ),
+                            ),
+                            SizedBox(height: 12.h),
+                            Text(
+                              _filePath,
+                              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
                             SizedBox(height: 32.h),
                             Padding(
                               padding: REdgeInsets.symmetric(horizontal: 16),
                               child: MyButton(
                                   onPressed: () {
                                     if (_formField.currentState!.validate()) {
-                                      nameController.clear();
-                                      emailController.clear();
-                                      createPasswordController.clear();
-                                      confirmPasswordController.clear();
+                                      ownerNameController.clear();
+                                      ownerEmailController.clear();
+                                      ownerCreatePasswordController.clear();
+                                      ownerConfirmPasswordController.clear();
                                       showOwnerDialog();
                                     }
                                   },
@@ -588,7 +729,7 @@ class _SignupScreenState extends State<SignupScreen>
                               width: double.infinity,
                               margin: REdgeInsets.symmetric(horizontal: 16),
                               child: TextFormField(
-                                controller: nameController,
+                                controller: userNameController,
                                 validator: (value) {
                                   bool emailValid = RegExp(
                                           r"^WS{1,2}:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:56789")
@@ -609,7 +750,7 @@ class _SignupScreenState extends State<SignupScreen>
                                       fontWeight: FontWeight.w300,
                                       fontSize: 14.sp),
                                   contentPadding:
-                                      const EdgeInsets.fromLTRB(16, 20, 16, 20),
+                                      const EdgeInsets.fromLTRB(16, 16, 16, 16),
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(8),
                                     borderSide: const BorderSide(
@@ -658,7 +799,7 @@ class _SignupScreenState extends State<SignupScreen>
                               width: double.infinity,
                               margin: REdgeInsets.symmetric(horizontal: 16),
                               child: TextFormField(
-                                controller: emailController,
+                                controller: userEmailController,
                                 validator: (value) {
                                   bool emailValid = RegExp(
                                           r"^WS{1,2}:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:56789")
@@ -679,7 +820,7 @@ class _SignupScreenState extends State<SignupScreen>
                                       fontWeight: FontWeight.w300,
                                       fontSize: 14.sp),
                                   contentPadding:
-                                      const EdgeInsets.fromLTRB(16, 20, 16, 20),
+                                      const EdgeInsets.fromLTRB(16, 16, 16, 16),
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(8),
                                     borderSide: const BorderSide(
@@ -728,11 +869,11 @@ class _SignupScreenState extends State<SignupScreen>
                               width: double.infinity,
                               margin: REdgeInsets.symmetric(horizontal: 16),
                               child: TextFormField(
-                                controller: createPasswordController,
+                                controller: userCreatePasswordController,
                                 validator: (value) {
                                   if (value!.isEmpty) {
                                     return "Enter Password";
-                                  } else if (createPasswordController
+                                  } else if (userCreatePasswordController
                                           .text.length <
                                       6) {
                                     return "Password length should be more than 6 characters";
@@ -740,7 +881,7 @@ class _SignupScreenState extends State<SignupScreen>
                                 },
                                 style: const TextStyle(
                                     color: AppColors.colorBlackHighEmp),
-                                obscureText: obscureText,
+                                obscureText: userObscureText,
                                 decoration: InputDecoration(
                                   hintText: "Password",
                                   hintStyle: TextStyle(
@@ -750,10 +891,10 @@ class _SignupScreenState extends State<SignupScreen>
                                   suffixIcon: GestureDetector(
                                     onTap: () {
                                       setState(() {
-                                        obscureText = !obscureText;
+                                        userObscureText = !userObscureText;
                                       });
                                     },
-                                    child: obscureText
+                                    child: userObscureText
                                         ? const Icon(Icons.visibility_off,
                                             color: AppColors.colorPrimary,
                                             size: 20)
@@ -762,7 +903,7 @@ class _SignupScreenState extends State<SignupScreen>
                                             size: 20),
                                   ),
                                   contentPadding:
-                                      const EdgeInsets.fromLTRB(16, 20, -4, 20),
+                                      const EdgeInsets.fromLTRB(16, 16, -4, 16),
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(8),
                                     borderSide: const BorderSide(
@@ -811,11 +952,11 @@ class _SignupScreenState extends State<SignupScreen>
                               width: double.infinity,
                               margin: REdgeInsets.symmetric(horizontal: 16),
                               child: TextFormField(
-                                controller: confirmPasswordController,
+                                controller: userConfirmPasswordController,
                                 validator: (value) {
                                   if (value!.isEmpty) {
                                     return "Enter Password";
-                                  } else if (createPasswordController
+                                  } else if (userCreatePasswordController
                                           .text.length <
                                       6) {
                                     return "Password length should be more than 6 characters";
@@ -823,7 +964,7 @@ class _SignupScreenState extends State<SignupScreen>
                                 },
                                 style: const TextStyle(
                                     color: AppColors.colorBlackHighEmp),
-                                obscureText: obscureText2,
+                                obscureText: userObscureText2,
                                 decoration: InputDecoration(
                                   hintText: "Password",
                                   hintStyle: TextStyle(
@@ -833,10 +974,10 @@ class _SignupScreenState extends State<SignupScreen>
                                   suffixIcon: GestureDetector(
                                     onTap: () {
                                       setState(() {
-                                        obscureText2 = !obscureText2;
+                                        userObscureText2 = !userObscureText2;
                                       });
                                     },
-                                    child: obscureText2
+                                    child: userObscureText2
                                         ? const Icon(Icons.visibility_off,
                                             color: AppColors.colorPrimary,
                                             size: 20)
@@ -845,7 +986,7 @@ class _SignupScreenState extends State<SignupScreen>
                                             size: 20),
                                   ),
                                   contentPadding:
-                                      const EdgeInsets.fromLTRB(16, 20, -4, 20),
+                                      const EdgeInsets.fromLTRB(16, 16, -4, 16),
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(8),
                                     borderSide: const BorderSide(
@@ -883,10 +1024,10 @@ class _SignupScreenState extends State<SignupScreen>
                               child: MyButton(
                                   onPressed: () {
                                     if (_formField.currentState!.validate()) {
-                                      nameController.clear();
-                                      emailController.clear();
-                                      createPasswordController.clear();
-                                      confirmPasswordController.clear();
+                                      userNameController.clear();
+                                      userEmailController.clear();
+                                      userCreatePasswordController.clear();
+                                      userConfirmPasswordController.clear();
                                       showUserDialog();
                                     }
                                   },
