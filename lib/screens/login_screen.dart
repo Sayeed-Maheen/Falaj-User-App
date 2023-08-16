@@ -19,9 +19,12 @@ class _LoginScreenState extends State<LoginScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
   final _formField = GlobalKey<FormState>();
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
-  var obscureText = true;
+  final ownerEmailController = TextEditingController();
+  final ownerPasswordController = TextEditingController();
+  final userEmailController = TextEditingController();
+  final userPasswordController = TextEditingController();
+  var userObscureText = true;
+  var ownerObscureText = true;
   @override
   void initState() {
     _tabController = TabController(length: 2, vsync: this);
@@ -136,7 +139,7 @@ class _LoginScreenState extends State<LoginScreen>
                               width: double.infinity,
                               margin: REdgeInsets.symmetric(horizontal: 16),
                               child: TextFormField(
-                                controller: emailController,
+                                controller: ownerEmailController,
                                 validator: (value) {
                                   bool emailValid = RegExp(
                                           r"^WS{1,2}:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:56789")
@@ -157,7 +160,7 @@ class _LoginScreenState extends State<LoginScreen>
                                       fontWeight: FontWeight.w300,
                                       fontSize: 14.sp),
                                   contentPadding:
-                                      const EdgeInsets.fromLTRB(16, 20, 16, 20),
+                                      const EdgeInsets.fromLTRB(16, 16, 16, 16),
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(8),
                                     borderSide: const BorderSide(
@@ -206,18 +209,18 @@ class _LoginScreenState extends State<LoginScreen>
                               width: double.infinity,
                               margin: REdgeInsets.symmetric(horizontal: 16),
                               child: TextFormField(
-                                controller: passwordController,
+                                controller: ownerPasswordController,
                                 validator: (value) {
                                   if (value!.isEmpty) {
                                     return "Enter Password";
-                                  } else if (passwordController.text.length <
+                                  } else if (ownerPasswordController.text.length <
                                       6) {
                                     return "Password length should be more than 6 characters";
                                   }
                                 },
                                 style: const TextStyle(
                                     color: AppColors.colorBlackHighEmp),
-                                obscureText: obscureText,
+                                obscureText: ownerObscureText,
                                 decoration: InputDecoration(
                                   hintText: "Password",
                                   hintStyle: TextStyle(
@@ -227,10 +230,10 @@ class _LoginScreenState extends State<LoginScreen>
                                   suffixIcon: GestureDetector(
                                     onTap: () {
                                       setState(() {
-                                        obscureText = !obscureText;
+                                        ownerObscureText = !ownerObscureText;
                                       });
                                     },
-                                    child: obscureText
+                                    child: ownerObscureText
                                         ? const Icon(Icons.visibility_off,
                                             color: AppColors.colorPrimary,
                                             size: 20)
@@ -239,7 +242,7 @@ class _LoginScreenState extends State<LoginScreen>
                                             size: 20),
                                   ),
                                   contentPadding:
-                                      const EdgeInsets.fromLTRB(16, 20, -4, 20),
+                                      const EdgeInsets.fromLTRB(16, 16, -4, 16),
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(8),
                                     borderSide: const BorderSide(
@@ -303,8 +306,8 @@ class _LoginScreenState extends State<LoginScreen>
                               child: MyButton(
                                   onPressed: () {
                                     if (_formField.currentState!.validate()) {
-                                      emailController.clear();
-                                      passwordController.clear();
+                                      ownerEmailController.clear();
+                                      ownerPasswordController.clear();
                                       Navigator.pushAndRemoveUntil<void>(
                                         context,
                                         MaterialPageRoute<void>(
@@ -378,7 +381,7 @@ class _LoginScreenState extends State<LoginScreen>
                               width: double.infinity,
                               margin: REdgeInsets.symmetric(horizontal: 16),
                               child: TextFormField(
-                                controller: emailController,
+                                controller: userEmailController,
                                 validator: (value) {
                                   bool emailValid = RegExp(
                                           r"^WS{1,2}:\/\/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:56789")
@@ -399,7 +402,7 @@ class _LoginScreenState extends State<LoginScreen>
                                       fontWeight: FontWeight.w300,
                                       fontSize: 14.sp),
                                   contentPadding:
-                                      const EdgeInsets.fromLTRB(16, 20, 16, 20),
+                                      const EdgeInsets.fromLTRB(16, 16, 16, 16),
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(8),
                                     borderSide: const BorderSide(
@@ -448,18 +451,18 @@ class _LoginScreenState extends State<LoginScreen>
                               width: double.infinity,
                               margin: REdgeInsets.symmetric(horizontal: 16),
                               child: TextFormField(
-                                controller: passwordController,
+                                controller: userPasswordController,
                                 validator: (value) {
                                   if (value!.isEmpty) {
                                     return "Enter Password";
-                                  } else if (passwordController.text.length <
+                                  } else if (ownerPasswordController.text.length <
                                       6) {
                                     return "Password length should be more than 6 characters";
                                   }
                                 },
                                 style: const TextStyle(
                                     color: AppColors.colorBlackHighEmp),
-                                obscureText: obscureText,
+                                obscureText: userObscureText,
                                 decoration: InputDecoration(
                                   hintText: "Password",
                                   hintStyle: TextStyle(
@@ -469,10 +472,10 @@ class _LoginScreenState extends State<LoginScreen>
                                   suffixIcon: GestureDetector(
                                     onTap: () {
                                       setState(() {
-                                        obscureText = !obscureText;
+                                        userObscureText = !userObscureText;
                                       });
                                     },
-                                    child: obscureText
+                                    child: userObscureText
                                         ? const Icon(Icons.visibility_off,
                                             color: AppColors.colorPrimary,
                                             size: 20)
@@ -481,7 +484,7 @@ class _LoginScreenState extends State<LoginScreen>
                                             size: 20),
                                   ),
                                   contentPadding:
-                                      const EdgeInsets.fromLTRB(16, 20, -4, 20),
+                                      const EdgeInsets.fromLTRB(16, 16, -4, 16),
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(8),
                                     borderSide: const BorderSide(
@@ -545,8 +548,8 @@ class _LoginScreenState extends State<LoginScreen>
                               child: MyButton(
                                   onPressed: () {
                                     if (_formField.currentState!.validate()) {
-                                      emailController.clear();
-                                      passwordController.clear();
+                                      userEmailController.clear();
+                                      userPasswordController.clear();
                                       Navigator.pushAndRemoveUntil<void>(
                                         context,
                                         MaterialPageRoute<void>(
