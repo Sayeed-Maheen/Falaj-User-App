@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../app_colors.dart';
+import 'app_colors.dart';
 
 class MyButton extends StatefulWidget {
   final void Function()?
@@ -38,7 +38,7 @@ class _MyButtonState extends State<MyButton> {
           child: Text(
             widget.text,
             style: TextStyle(
-              color: AppColors.colorWhite,
+              color: AppColors.colorWhiteHighEmp,
               fontSize: 16.sp,
               fontWeight: FontWeight.w600,
             ),

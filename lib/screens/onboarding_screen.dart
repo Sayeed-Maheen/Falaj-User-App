@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'app_colors.dart';
-import 'design_models/onboarding_model.dart';
+import '../utils/app_colors.dart';
+import '../design_models/onboarding_model.dart';
 import 'login_screen.dart';
 
 class OnBoardingScreen extends StatefulWidget {
@@ -96,7 +96,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           contents[i].title,
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              color: AppColors.colorWhite,
+                              color: AppColors.colorWhiteHighEmp,
                               fontSize: 36.sp,
                               fontWeight: FontWeight.w400),
                         ),
@@ -114,7 +114,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           contents[i].description,
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              color: AppColors.colorWhite,
+                              color: AppColors.colorWhiteHighEmp,
                               fontSize: 14.sp,
                               fontWeight: FontWeight.w400),
                         ),
@@ -150,7 +150,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                       currentIndex == contents.length - 1
                                           ? Icons.arrow_forward_ios
                                           : Icons.arrow_forward_ios,
-                                      color: AppColors.colorWhite,
+                                      color: AppColors.colorWhiteHighEmp,
                                     ),
                                   ),
                                 ),
@@ -187,6 +187,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             borderRadius: BorderRadius.circular(100),
             color: currentIndex == index
                 ? AppColors.colorPrimary
-                : AppColors.colorWhite));
+                : AppColors.colorWhiteHighEmp));
   }
 }
