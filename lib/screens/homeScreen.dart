@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreen extends StatelessWidget {
-   HomeScreen({super.key});
+  HomeScreen({super.key});
 
   final List<String> _images = [
     'assets/images/img1.png',
@@ -60,7 +60,6 @@ class HomeScreen extends StatelessWidget {
           Expanded(
             child: ListView(
               children: [
-
                 SizedBox(height: 12.h),
                 Padding(
                   padding: REdgeInsets.only(left: 16),
@@ -93,14 +92,15 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-
-
                 ...List.generate(
                   _images.length,
-                      (index) => Container(child: Image.asset(_images[index])),
+                  (index) => Container(
+
+                      margin: EdgeInsets.only(bottom: 16),
+
+
+                      child: Image.asset(_images[index], height: 100, width: 100,)),
                 ),
-
-
               ],
             ),
           ),
