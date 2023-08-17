@@ -1,3 +1,4 @@
+import 'package:falaj_user_app/design_models/my_bottom_nav.dart';
 import 'package:falaj_user_app/screens/home_screen.dart';
 import 'package:falaj_user_app/screens/onboarding_screen.dart';
 import 'package:falaj_user_app/utils/app_colors.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
                   ColorScheme.fromSeed(seedColor: AppColors.colorPrimary),
               useMaterial3: true,
               fontFamily: "Manrope"),
-          home: const OnBoardingScreen(),
+          home: const MyBottomNav(),
         );
       },
     );

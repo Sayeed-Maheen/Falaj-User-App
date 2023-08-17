@@ -130,7 +130,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                   color: AppColors.colorPrimary,
                                 ),
                                 child: MaterialButton(
-                                  onPressed: _nextPage, // Use the updated onPressed method
+                                  onPressed:
+                                      _nextPage, // Use the updated onPressed method
                                   child: Center(
                                     child: Icon(
                                       currentIndex == contents.length - 1
@@ -156,7 +157,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(
               contents.length,
-                  (index) => buildDot(index, context),
+              (index) => buildDot(index, context),
             ),
           ),
         ),

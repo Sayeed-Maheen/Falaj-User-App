@@ -92,6 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.colorWhiteHighEmp,
       body: SafeArea(
         child: Form(
           key: _formField,
