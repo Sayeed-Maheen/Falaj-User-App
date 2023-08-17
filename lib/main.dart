@@ -1,5 +1,4 @@
-import 'package:falaj_user_app/design_models/my_bottom_nav.dart';
-import 'package:falaj_user_app/screens/home_screen.dart';
+
 import 'package:falaj_user_app/screens/onboarding_screen.dart';
 import 'package:falaj_user_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
