@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
                   ColorScheme.fromSeed(seedColor: AppColors.colorPrimary),
               useMaterial3: true,
               fontFamily: "Manrope"),
-          home: const MyBottomNav(),
+          home: const OnBoardingScreen(),
         );
       },
     );

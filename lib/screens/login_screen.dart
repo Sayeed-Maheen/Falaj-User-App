@@ -1,3 +1,4 @@
+import 'package:falaj_user_app/design_models/my_bottom_nav.dart';
 import 'package:falaj_user_app/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -347,7 +348,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                           context,
                                           MaterialPageRoute<void>(
                                               builder: (BuildContext context) =>
-                                                  const LoginScreen()),
+                                                  const MyBottomNav()),
                                           ModalRoute.withName('/'),
                                         );
                                       }
@@ -596,7 +597,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                           context,
                                           MaterialPageRoute<void>(
                                               builder: (BuildContext context) =>
-                                                  const LoginScreen()),
+                                                  const MyBottomNav()),
                                           ModalRoute.withName('/'),
                                         );
                                       }

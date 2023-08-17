@@ -29,8 +29,8 @@ class _MyBottomNavState extends State<MyBottomNav> {
         height: 60.h,
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(24),
-            topRight: Radius.circular(24),
+            topLeft: Radius.circular(0),
+            topRight: Radius.circular(0),
           ),
           boxShadow: [
             BoxShadow(
@@ -43,8 +43,8 @@ class _MyBottomNavState extends State<MyBottomNav> {
         ),
         child: ClipRRect(
           borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(24),
-            topRight: Radius.circular(24),
+            topLeft: Radius.circular(0),
+            topRight: Radius.circular(0),
           ),
           child: BottomNavigationBar(
             currentIndex: _currentIndex,

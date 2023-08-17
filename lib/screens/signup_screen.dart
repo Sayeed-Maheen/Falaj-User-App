@@ -1,5 +1,6 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
+import 'package:falaj_user_app/design_models/my_bottom_nav.dart';
 import 'package:falaj_user_app/utils/app_colors.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -95,7 +96,7 @@ class _SignupScreenState extends State<SignupScreen>
                         context,
                         MaterialPageRoute<void>(
                             builder: (BuildContext context) =>
-                                const HomeScreen()),
+                                const MyBottomNav()),
                         ModalRoute.withName('/'),
                       );
                     },
@@ -156,7 +157,7 @@ class _SignupScreenState extends State<SignupScreen>
                         context,
                         MaterialPageRoute<void>(
                             builder: (BuildContext context) =>
-                                const HomeScreen()),
+                                const MyBottomNav()),
                         ModalRoute.withName('/'),
                       );
                     },
