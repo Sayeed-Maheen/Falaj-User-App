@@ -1,4 +1,5 @@
 import 'package:falaj_user_app/screens/home_screen.dart';
+import 'package:falaj_user_app/screens/profile_screen.dart';
 import 'package:falaj_user_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,7 +19,7 @@ class _MyBottomNavState extends State<MyBottomNav> {
     const HomeScreen(),
     Container(),
     Container(),
-    Container(),
+    const ProfileScreen()
   ];
 
   @override

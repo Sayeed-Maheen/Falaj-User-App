@@ -5,7 +5,7 @@ class AppColors {
   static const colorPrimary = Color(0xff5880CC);
   static const colorPrimaryDark = Color(0xff5BDB98);
   static const colorPrimaryDarker = Color(0xff56CD93);
-  static const colorPrimaryLight = Color(0xffE7F8EF);
+  static const colorPrimaryLight = Color(0xffD7E0FF);
   static const colorPrimaryLighter = Color(0xffD6F5E9);
   static const colorAud = Color(0xffB4FFD5);
 
@@ -14,6 +14,7 @@ class AppColors {
   static const colorSecondaryLighter = Color(0xffFFEBCF);
 
   static const colorGrey = Color(0xffEEEEEE);
+  static const colorDarkGrey = Color(0xff808080);
   static const colorGreyLight = Color(0xffE7E7E7);
   static const colorGreyLighter = Color(0xffF1F1F1);
   static const colorGreyLightest = Color(0xffF9F9F9);

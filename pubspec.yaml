@@ -43,6 +43,8 @@ dependencies:
   dotted_border: ^2.0.0+3
   file_picker: ^5.3.3
   material_segmented_control:
+  image_picker: ^1.0.2
+  flutter_switch: ^0.3.2
 
 
 dev_dependencies:
