@@ -609,7 +609,8 @@ class _SignupScreenState extends State<SignupScreen>
                                   return DropdownButtonHideUnderline(
                                     child: DropdownButton2(
                                       buttonStyleData: const ButtonStyleData(
-                                        padding: EdgeInsets.symmetric(horizontal: 16),
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 16),
                                         height: 40,
                                         width: 140,
                                       ),
@@ -621,15 +622,16 @@ class _SignupScreenState extends State<SignupScreen>
                                         ),
                                       ),
                                       items: falajName
-                                          .map((item) => DropdownMenuItem<String>(
-                                        value: item,
-                                        child: Text(
-                                          item,
-                                          style: const TextStyle(
-                                            fontSize: 14,
-                                          ),
-                                        ),
-                                      ))
+                                          .map((item) =>
+                                              DropdownMenuItem<String>(
+                                                value: item,
+                                                child: Text(
+                                                  item,
+                                                  style: const TextStyle(
+                                                    fontSize: 14,
+                                                  ),
+                                                ),
+                                              ))
                                           .toList(),
                                       value: selectedFalajName,
                                       onChanged: (value) {
@@ -638,7 +640,8 @@ class _SignupScreenState extends State<SignupScreen>
                                           state.didChange(value);
                                         });
                                       },
-                                      menuItemStyleData: const MenuItemStyleData(
+                                      menuItemStyleData:
+                                          const MenuItemStyleData(
                                         height: 40,
                                       ),
                                     ),
@@ -664,31 +667,35 @@ class _SignupScreenState extends State<SignupScreen>
                               child: InkWell(
                                 onTap: _pickFile,
                                 child: DottedBorder(
-                                    borderType: BorderType.RRect,
-                                    radius: const Radius.circular(12),
-                                    dashPattern: const [5, 5],
-                                    color: AppColors.colorPrimary,
-                                    strokeWidth: 1.5,
-                                    child: Container(
-                                      height: 71.h,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(12)
-                                      ),
-                                      child: Center(child: Text(
+                                  borderType: BorderType.RRect,
+                                  radius: const Radius.circular(12),
+                                  dashPattern: const [5, 5],
+                                  color: AppColors.colorPrimary,
+                                  strokeWidth: 1.5,
+                                  child: Container(
+                                    height: 71.h,
+                                    decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(12)),
+                                    child: Center(
+                                      child: Text(
                                         "Upload here",
                                         style: TextStyle(
                                           fontSize: 18.sp,
                                           fontWeight: FontWeight.w600,
                                           color: AppColors.colorPrimary,
                                         ),
-                                      ),),
-                                    ),),
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ),
                             ),
                             SizedBox(height: 12.h),
                             Text(
                               _filePath,
-                              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                              style: const TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
                             ),
                             SizedBox(height: 32.h),
                             Padding(

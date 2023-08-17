@@ -130,21 +130,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                   color: AppColors.colorPrimary,
                                 ),
                                 child: MaterialButton(
-                                  onPressed: () async {
-                                    if (currentIndex == contents.length - 1) {
-                                      await saveOnboardingStatus();
-                                      Navigator.pushReplacement(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (_) =>
-                                                  const LoginScreen()));
-                                    }
-                                    _controller.nextPage(
-                                      duration:
-                                          const Duration(milliseconds: 100),
-                                      curve: Curves.bounceIn,
-                                    );
-                                  },
+                                  onPressed: _nextPage, // Use the updated onPressed method
                                   child: Center(
                                     child: Icon(
                                       currentIndex == contents.length - 1
@@ -170,7 +156,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(
               contents.length,
-              (index) => buildDot(index, context),
+                  (index) => buildDot(index, context),
             ),
           ),
         ),
@@ -188,5 +174,20 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             color: currentIndex == index
                 ? AppColors.colorPrimary
                 : AppColors.colorWhiteHighEmp));
+  }
+
+  void _nextPage() async {
+    if (currentIndex == contents.length - 1) {
+      await saveOnboardingStatus();
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (_) => const LoginScreen()),
+      );
+    } else {
+      _controller.nextPage(
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
+    }
   }
 }
