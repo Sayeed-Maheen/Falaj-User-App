@@ -182,7 +182,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   FlutterSwitch(
                     activeColor: AppColors.colorPrimary,
-                    inactiveColor: AppColors.colorDarkGrey,
+                    inactiveColor: AppColors.colorGreyDark,
                     width: 40.w,
                     height: 20.h,
                     toggleSize: 20,
@@ -226,7 +226,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     Icon(
                       Icons.arrow_forward_ios_rounded,
-                      color: AppColors.colorDarkGrey,
+                      color: AppColors.colorGreyDark,
                       size: 20,
                     )
                   ],
@@ -264,7 +264,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     Icon(
                       Icons.arrow_forward_ios_rounded,
-                      color: AppColors.colorDarkGrey,
+                      color: AppColors.colorGreyDark,
                       size: 20,
                     )
                   ],
@@ -300,7 +300,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     Icon(
                       Icons.arrow_forward_ios_rounded,
-                      color: AppColors.colorDarkGrey,
+                      color: AppColors.colorGreyDark,
                       size: 20,
                     )
                   ],
@@ -336,7 +336,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     const Icon(
                       Icons.arrow_forward_ios_rounded,
-                      color: AppColors.colorDarkGrey,
+                      color: AppColors.colorGreyDark,
                       size: 20,
                     )
                   ],
@@ -378,7 +378,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     const Icon(
                       Icons.arrow_forward_ios_rounded,
-                      color: AppColors.colorDarkGrey,
+                      color: AppColors.colorGreyDark,
                       size: 20,
                     )
                   ],

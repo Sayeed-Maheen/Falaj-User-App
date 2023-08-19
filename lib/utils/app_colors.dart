@@ -14,9 +14,9 @@ class AppColors {
   static const colorSecondaryLighter = Color(0xffFFEBCF);
 
   static const colorGrey = Color(0xffEEEEEE);
-  static const colorDarkGrey = Color(0xff808080);
+  static const colorGreyDark = Color(0xff808080);
   static const colorGreyLight = Color(0xffE7E7E7);
-  static const colorGreyLighter = Color(0xffF1F1F1);
+  static const colorGreyLighter = Color(0xffEBEBEB);
   static const colorGreyLightest = Color(0xffF9F9F9);
 
   static const colorWhiteHighEmp = Color(0xffFFFFFF);
@@ -27,6 +27,7 @@ class AppColors {
   static const colorBlackDarkerEmp = Color(0xFF606060);
   static const colorRed = Color(0xFFFF6B6B);
   static const colorGreen = Color(0xFF36AF6E);
+  static const colorGreenLight = Color(0xFFBCF5D7);
 
   static const colorBlueDark = Color(0xff1B3149);
   static const colorBlueLight = Color(0xff90A0B2);

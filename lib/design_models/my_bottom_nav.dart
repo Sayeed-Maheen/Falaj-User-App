@@ -1,4 +1,5 @@
 import 'package:falaj_user_app/screens/profile_screen.dart';
+import 'package:falaj_user_app/screens/rented_falaj_screen.dart';
 import 'package:falaj_user_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,7 +17,7 @@ class MyBottomNav extends StatefulWidget {
 class _MyBottomNavState extends State<MyBottomNav> {
   int _currentIndex = 0;
 
-  final tabs = [HomeScreen(), Container(), Container(), const ProfileScreen()];
+  final tabs = [HomeScreen(), RentedFalajScreen(), Container(), const ProfileScreen()];
 
   @override
   Widget build(BuildContext context) {
