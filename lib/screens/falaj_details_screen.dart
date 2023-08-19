@@ -1,3 +1,4 @@
+import 'package:falaj_user_app/screens/select_payment_method_screen.dart';
 import 'package:falaj_user_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -178,7 +179,13 @@ class _FalajDetailsScreenState extends State<FalajDetailsScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const SelectPaymentMethodScreen()));
+              },
               child: Container(
                 height: 48.h,
                 width: 195.w,
