@@ -1,6 +1,7 @@
 import 'package:falaj_user_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -92,14 +93,105 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+                SizedBox(height: 12.h),
                 ...List.generate(
                   _images.length,
-                  (index) => Container(
-
-                      margin: EdgeInsets.only(bottom: 16),
-
-
-                      child: Image.asset(_images[index], height: 100, width: 100,)),
+                  (index) => Card(
+                    shadowColor: AppColors.colorGrey,
+                    margin: REdgeInsets.only(left: 16, right: 16, bottom: 12),
+                    color: AppColors.colorWhiteHighEmp,
+                    elevation: 3,
+                    child: Container(
+                        padding:
+                            REdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                        decoration: BoxDecoration(
+                            color: AppColors.colorWhiteHighEmp,
+                            borderRadius: BorderRadius.circular(12)),
+                        child: Row(
+                          children: [
+                            Image.asset(
+                              _images[index],
+                              height: 70,
+                              width: 70,
+                            ),
+                            SizedBox(width: 12.w),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "Al Yalham Falaj",
+                                      style: TextStyle(
+                                        fontSize: 14.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: AppColors.colorBlackHighEmp,
+                                      ),
+                                    ),
+                                    SizedBox(width: 55.w),
+                                    Row(
+                                      children: [
+                                        const Icon(Icons.access_time_filled,
+                                            color: AppColors.colorGreen,
+                                            size: 18),
+                                        SizedBox(width: 4.w),
+                                        Text(
+                                          "4PM-6PM",
+                                          style: TextStyle(
+                                            fontSize: 12.sp,
+                                            fontWeight: FontWeight.w600,
+                                            color: AppColors.colorGreen,
+                                          ),
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                                SizedBox(height: 2.h),
+                                Row(
+                                  children: [
+                                    const Icon(Icons.location_on,
+                                        color: AppColors.colorBlackLowEmp,
+                                        size: 20),
+                                    SizedBox(width: 4.w),
+                                    Text(
+                                      "Ain Al-Jebah Al, Yeaben",
+                                      style: TextStyle(
+                                        fontSize: 10.sp,
+                                        fontWeight: FontWeight.w300,
+                                        color: AppColors.colorBlackLowEmp,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 6.h),
+                                Row(
+                                  children: [
+                                    Text(
+                                      "﷼30 ",
+                                      style: TextStyle(
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.w800,
+                                        color: AppColors.colorGreen,
+                                      ),
+                                    ),
+                                    Text(
+                                      "/month",
+                                      style: TextStyle(
+                                        fontSize: 8.sp,
+                                        fontWeight: FontWeight.w400,
+                                        color: AppColors.colorBlackDarkerEmp,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
+                        )),
+                  ),
                 ),
               ],
             ),

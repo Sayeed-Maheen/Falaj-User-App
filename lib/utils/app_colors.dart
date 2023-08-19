@@ -24,7 +24,9 @@ class AppColors {
   static const colorBlackMidEmp = Color(0xFF919191);
   static const colorBlackLowEmp = Color(0xFF757575);
   static const colorBlackLowerEmp = Color(0xFF6C6C6C);
+  static const colorBlackDarkerEmp = Color(0xFF606060);
   static const colorRed = Color(0xFFFF6B6B);
+  static const colorGreen = Color(0xFF36AF6E);
 
   static const colorBlueDark = Color(0xff1B3149);
   static const colorBlueLight = Color(0xff90A0B2);
