@@ -30,6 +30,7 @@ class AppColors {
   static const colorBlackLowerEmp = Color(0xFF6C6C6C);
   static const colorBlackDarkerEmp = Color(0xFF606060);
   static const colorRed = Color(0xFFFF6B6B);
+  static const colorRedLight = Color(0xFFFFC5C5);
   static const colorGreen = Color(0xFF36AF6E);
   static const colorGreenLight = Color(0xFFBCF5D7);
 

@@ -9,6 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../screens/owner/owner_profile_screen.dart';
+import '../screens/owner/request_sell_history_screen.dart';
 import '../screens/user/users_home_screen.dart';
 
 class OwnerBottomNav extends StatefulWidget {
@@ -23,7 +24,7 @@ class _OwnerBottomNavState extends State<OwnerBottomNav> {
 
   final tabs = [
     OwnerHomeScreen(),
-    const RentedFalajScreen(),
+    const RequestSellHistoryScreen(),
     OwnerInboxScreen(),
     const OwnerProfileScreen()
   ];
