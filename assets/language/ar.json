@@ -1,10 +1,14 @@
 {
   "language": "العربية",
   "welcomeBack": "اهلا بعودتك",
-  "yourEmail": "بريد إلكتروني",
+  "yourEmail": "الايميل",
   "yourPassword": "كلمة السر",
   "forgotPassword": "نسيت  كلمة  السر ؟",
   "signIn": "تسجيل الدخول",
   "dontHaveAccount": "لا تمتلك حساب  ؟",
-  "registerNow": "سجل الان"
+  "registerNow": "سجل الان",
+  "signUpTo": "تسجيل  حساب",
+  "yourName": "الاسم",
+  "createPassword": "انشاء كلمة  السر",
+  "rewritePassword": "اعادة كتابة  كلمة السر"
 }

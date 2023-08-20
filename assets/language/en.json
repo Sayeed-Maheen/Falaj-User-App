@@ -7,7 +7,12 @@
   "forgotPassword": "Forgot password?",
   "signIn": "Sign In",
   "dontHaveAccount": "Don’t have any account?",
-  "registerNow": "Register now"
+  "registerNow": "Register now",
+  "signUpTo": "Sign Up to",
+  "yourName": "Your Name",
+  "createPassword": "Create Password",
+  "rewritePassword": "Rewrite Password"
+
 
 
 }

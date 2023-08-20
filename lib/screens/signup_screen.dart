@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 import '../utils/my_button.dart';
 
@@ -263,7 +264,7 @@ class _SignupScreenState extends State<SignupScreen> {
               padding: REdgeInsets.only(top: 76),
               child: Center(
                 child: Text(
-                  "Sign Up to",
+                  "signUpTo".tr,
                   style: TextStyle(
                     fontSize: 24.sp,
                     fontWeight: FontWeight.w700,
@@ -318,7 +319,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           Padding(
                             padding: REdgeInsets.symmetric(horizontal: 16),
                             child: Text(
-                              "Your Name",
+                              "yourName".tr,
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w600,
@@ -388,7 +389,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           Padding(
                             padding: REdgeInsets.symmetric(horizontal: 16),
                             child: Text(
-                              "Your Email",
+                              "yourEmail".tr,
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w600,
@@ -458,7 +459,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           Padding(
                             padding: REdgeInsets.symmetric(horizontal: 16),
                             child: Text(
-                              "Create Password",
+                              "createPassword".tr,
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w600,
@@ -505,7 +506,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                           size: 20),
                                 ),
                                 contentPadding:
-                                    const EdgeInsets.fromLTRB(16, 16, -4, 16),
+                                    const EdgeInsets.fromLTRB(16, 16, 16, 16),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(8),
                                   borderSide: const BorderSide(
@@ -541,7 +542,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           Padding(
                             padding: REdgeInsets.symmetric(horizontal: 16),
                             child: Text(
-                              "Rewrite Password",
+                              "rewritePassword".tr,
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w600,
@@ -588,7 +589,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                           size: 20),
                                 ),
                                 contentPadding:
-                                    const EdgeInsets.fromLTRB(16, 16, -4, 16),
+                                    const EdgeInsets.fromLTRB(16, 16, 16, 16),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(8),
                                   borderSide: const BorderSide(
