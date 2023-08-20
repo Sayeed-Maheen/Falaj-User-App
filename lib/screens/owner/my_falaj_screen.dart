@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../utils/app_colors.dart';
-import 'falaj_details_screen.dart';
+import '../../utils/app_colors.dart';
+import '../user/falaj_details_screen.dart';
 import 'owner_falaj_details_screen.dart';
 
 class MyFalajScreen extends StatelessWidget {

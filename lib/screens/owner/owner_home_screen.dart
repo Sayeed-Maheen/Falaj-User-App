@@ -1,5 +1,5 @@
-import 'package:falaj_user_app/screens/falaj_details_screen.dart';
-import 'package:falaj_user_app/screens/my_falaj_screen.dart';
+import 'package:falaj_user_app/screens/user/falaj_details_screen.dart';
+import 'package:falaj_user_app/screens/owner/my_falaj_screen.dart';
 import 'package:falaj_user_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

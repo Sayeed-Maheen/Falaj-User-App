@@ -1,9 +1,9 @@
-import 'package:falaj_user_app/screens/users_chat_screen.dart';
+import 'package:falaj_user_app/screens/user/users_chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../utils/app_colors.dart';
+import '../../utils/app_colors.dart';
 
 class UsersInboxScreen extends StatelessWidget {
   UsersInboxScreen({Key? key}) : super(key: key);

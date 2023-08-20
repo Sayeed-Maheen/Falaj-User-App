@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../design_models/remember_me_model.dart';
-import '../utils/app_colors.dart';
-import '../utils/my_button.dart';
+import '../../design_models/remember_me_model.dart';
+import '../../utils/app_colors.dart';
+import '../../utils/my_button.dart';
 
 class CustomSegmentedControl extends StatelessWidget {
   final List<String> segments;

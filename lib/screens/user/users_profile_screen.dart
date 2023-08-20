@@ -7,8 +7,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../utils/app_colors.dart';
-import 'login_screen.dart';
+import '../../utils/app_colors.dart';
+import '../login_screen.dart';
 
 class UsersProfileScreen extends StatefulWidget {
   const UsersProfileScreen({super.key});

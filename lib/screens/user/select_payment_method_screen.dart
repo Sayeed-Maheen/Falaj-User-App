@@ -1,8 +1,8 @@
-import 'package:falaj_user_app/screens/select_payment_method_congrats_screen.dart';
+import 'package:falaj_user_app/screens/user/select_payment_method_congrats_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../utils/app_colors.dart';
+import '../../utils/app_colors.dart';
 
 class SelectPaymentMethodScreen extends StatefulWidget {
   const SelectPaymentMethodScreen({Key? key}) : super(key: key);

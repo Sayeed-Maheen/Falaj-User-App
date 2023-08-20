@@ -1,15 +1,15 @@
-import 'package:falaj_user_app/screens/owner_home_screen.dart';
-import 'package:falaj_user_app/screens/owner_inbox_screen.dart';
-import 'package:falaj_user_app/screens/users_profile_screen.dart';
-import 'package:falaj_user_app/screens/rented_falaj_screen.dart';
-import 'package:falaj_user_app/screens/users_inbox_screen.dart';
+import 'package:falaj_user_app/screens/owner/owner_home_screen.dart';
+import 'package:falaj_user_app/screens/owner/owner_inbox_screen.dart';
+import 'package:falaj_user_app/screens/user/users_profile_screen.dart';
+import 'package:falaj_user_app/screens/user/rented_falaj_screen.dart';
+import 'package:falaj_user_app/screens/user/users_inbox_screen.dart';
 import 'package:falaj_user_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../screens/owner_profile_screen.dart';
-import '../screens/users_home_screen.dart';
+import '../screens/owner/owner_profile_screen.dart';
+import '../screens/user/users_home_screen.dart';
 
 class OwnerBottomNav extends StatefulWidget {
   const OwnerBottomNav({Key? key}) : super(key: key);

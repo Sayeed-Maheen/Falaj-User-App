@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../design_models/users_bottom_nav.dart';
-import '../utils/app_colors.dart';
+import '../../design_models/users_bottom_nav.dart';
+import '../../utils/app_colors.dart';
 
 class SelectPaymentMethodCongratsScreen extends StatelessWidget {
   const SelectPaymentMethodCongratsScreen({Key? key}) : super(key: key);

@@ -1,4 +1,4 @@
-import 'package:falaj_user_app/screens/select_payment_method_screen.dart';
+import 'package:falaj_user_app/screens/user/select_payment_method_screen.dart';
 import 'package:falaj_user_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
