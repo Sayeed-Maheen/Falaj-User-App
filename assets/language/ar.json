@@ -1,4 +1,10 @@
 {
   "language": "العربية",
-  "welcomeBack": "اهلا بعودتك"
+  "welcomeBack": "اهلا بعودتك",
+  "yourEmail": "بريد إلكتروني",
+  "yourPassword": "كلمة السر",
+  "forgotPassword": "نسيت  كلمة  السر ؟",
+  "signIn": "تسجيل الدخول",
+  "dontHaveAccount": "لا تمتلك حساب  ؟",
+  "registerNow": "سجل الان"
 }

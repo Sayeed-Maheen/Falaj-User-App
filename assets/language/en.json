@@ -1,5 +1,13 @@
 
 {
   "language": "English",
-  "welcomeBack": "Welcome Back"
+  "welcomeBack": "Welcome Back",
+  "yourEmail": "Your Email",
+  "yourPassword": "Your Password",
+  "forgotPassword": "Forgot password?",
+  "signIn": "Sign In",
+  "dontHaveAccount": "Don’t have any account?",
+  "registerNow": "Register now"
+
+
 }

@@ -171,7 +171,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               Padding(
                                 padding: REdgeInsets.symmetric(horizontal: 16),
                                 child: Text(
-                                  "Your Email",
+                                  "yourEmail".tr,
                                   style: TextStyle(
                                     fontSize: 14.sp,
                                     fontWeight: FontWeight.w600,
@@ -241,7 +241,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               Padding(
                                 padding: REdgeInsets.symmetric(horizontal: 16),
                                 child: Text(
-                                  "Your Password",
+                                  "yourPassword".tr,
                                   style: TextStyle(
                                     fontSize: 14.sp,
                                     fontWeight: FontWeight.w600,
@@ -289,7 +289,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                               size: 20),
                                     ),
                                     contentPadding: const EdgeInsets.fromLTRB(
-                                        16, 16, -4, 16),
+                                        16, 16, 16, 16),
                                     enabledBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(8),
                                       borderSide: const BorderSide(
@@ -336,7 +336,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                           tapTargetSize:
                                               MaterialTapTargetSize.shrinkWrap),
                                       child: Text(
-                                        'Forgot password?',
+                                        'forgotPassword'.tr,
                                         style: TextStyle(
                                           fontSize: 12.sp,
                                           fontWeight: FontWeight.w600,
@@ -364,7 +364,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         );
                                       }
                                     },
-                                    text: "Sign In"),
+                                    text: "signIn".tr),
                               ),
                               SizedBox(height: 64.h),
                               Padding(
@@ -373,7 +373,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      "Don’t have any account? ",
+                                      "dontHaveAccount".tr,
                                       style: TextStyle(
                                         fontSize: 14.sp,
                                         fontWeight: FontWeight.w600,
@@ -394,7 +394,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                           tapTargetSize:
                                               MaterialTapTargetSize.shrinkWrap),
                                       child: Text(
-                                        'Register now',
+                                        'registerNow'.tr,
                                         style: TextStyle(
                                           fontSize: 14.sp,
                                           fontWeight: FontWeight.w600,
@@ -418,7 +418,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               Padding(
                                 padding: REdgeInsets.symmetric(horizontal: 16),
                                 child: Text(
-                                  "Your Email",
+                                  "yourEmail".tr,
                                   style: TextStyle(
                                     fontSize: 14.sp,
                                     fontWeight: FontWeight.w600,
@@ -488,7 +488,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               Padding(
                                 padding: REdgeInsets.symmetric(horizontal: 16),
                                 child: Text(
-                                  "Your Password",
+                                  "yourPassword".tr,
                                   style: TextStyle(
                                     fontSize: 14.sp,
                                     fontWeight: FontWeight.w600,
@@ -536,7 +536,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                               size: 20),
                                     ),
                                     contentPadding: const EdgeInsets.fromLTRB(
-                                        16, 16, -4, 16),
+                                        16, 16, 16, 16),
                                     enabledBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(8),
                                       borderSide: const BorderSide(
@@ -583,7 +583,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                           tapTargetSize:
                                               MaterialTapTargetSize.shrinkWrap),
                                       child: Text(
-                                        'Forgot password?',
+                                        'forgotPassword'.tr,
                                         style: TextStyle(
                                           fontSize: 12.sp,
                                           fontWeight: FontWeight.w600,
@@ -611,7 +611,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         );
                                       }
                                     },
-                                    text: "Sign In"),
+                                    text: "signIn".tr),
                               ),
                               SizedBox(height: 64.h),
                               Padding(
@@ -620,7 +620,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      "Don’t have any account? ",
+                                      "dontHaveAccount".tr,
                                       style: TextStyle(
                                         fontSize: 14.sp,
                                         fontWeight: FontWeight.w600,
@@ -641,7 +641,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                           tapTargetSize:
                                               MaterialTapTargetSize.shrinkWrap),
                                       child: Text(
-                                        'Register now',
+                                        'registerNow'.tr,
                                         style: TextStyle(
                                           fontSize: 14.sp,
                                           fontWeight: FontWeight.w600,
