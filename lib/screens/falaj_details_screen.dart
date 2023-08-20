@@ -1,6 +1,7 @@
 import 'package:falaj_user_app/screens/select_payment_method_screen.dart';
 import 'package:falaj_user_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -15,6 +16,11 @@ class _FalajDetailsScreenState extends State<FalajDetailsScreen> {
   bool showFullText = false;
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarIconBrightness: Brightness.light,
+      ),
+    );
     const String initialText =
         "quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis."
         "Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis."

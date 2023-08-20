@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 
 import '../utils/app_colors.dart';
 import 'falaj_details_screen.dart';
+import 'owner_falaj_details_screen.dart';
 
 class MyFalajScreen extends StatelessWidget {
   MyFalajScreen({Key? key}) : super(key: key);
@@ -58,7 +59,8 @@ class MyFalajScreen extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const FalajDetailsScreen()));
+                          builder: (context) =>
+                              const OwnerFalajDetailsScreen()));
                 },
                 child: Container(
                     padding: REdgeInsets.symmetric(horizontal: 12, vertical: 8),

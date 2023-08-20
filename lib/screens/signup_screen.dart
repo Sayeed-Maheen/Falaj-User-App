@@ -1,5 +1,6 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
+import 'package:falaj_user_app/design_models/owner_bottom_nav.dart';
 import 'package:falaj_user_app/design_models/users_bottom_nav.dart';
 import 'package:falaj_user_app/utils/app_colors.dart';
 import 'package:file_picker/file_picker.dart';
@@ -50,6 +51,7 @@ class _SignupScreenState extends State<SignupScreen>
   void showOwnerDialog() {
     showDialog(
       context: context,
+      barrierDismissible: false,
       builder: (context) => Dialog(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
@@ -95,7 +97,7 @@ class _SignupScreenState extends State<SignupScreen>
                         context,
                         MaterialPageRoute<void>(
                             builder: (BuildContext context) =>
-                                const UsersBottomNav()),
+                                const OwnerBottomNav()),
                         ModalRoute.withName('/'),
                       );
                     },
@@ -111,6 +113,7 @@ class _SignupScreenState extends State<SignupScreen>
   void showUserDialog() {
     showDialog(
       context: context,
+      barrierDismissible: false,
       builder: (context) => Dialog(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),

@@ -6,6 +6,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
+import 'owner_falaj_details_screen.dart';
+
 class OwnerHomeScreen extends StatelessWidget {
   OwnerHomeScreen({super.key});
 
@@ -124,7 +126,7 @@ class OwnerHomeScreen extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      const FalajDetailsScreen()));
+                                      const OwnerFalajDetailsScreen()));
                         },
                         child: Container(
                             padding: REdgeInsets.symmetric(
