@@ -16,29 +16,12 @@ class OnBoardingScreen extends StatefulWidget {
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   int currentIndex = 0;
-  bool hasShownOnboarding = false;
-
-  Future<void> checkOnboardingStatus() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    bool hasShownOnboardingScreenTwo =
-        prefs.getBool('hasShownOnboardingScreenTwo') ?? false;
-
-    setState(() {
-      hasShownOnboarding = hasShownOnboardingScreenTwo;
-    });
-  }
-
-  Future<void> saveOnboardingStatus() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('hasShownOnboardingScreenTwo', true);
-  }
 
   late PageController _controller;
 
   @override
   void initState() {
     _controller = PageController(initialPage: 0);
-    checkOnboardingStatus();
     super.initState();
   }
 
@@ -55,10 +38,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         statusBarIconBrightness: Brightness.light,
       ),
     );
-    return hasShownOnboarding ? const LoginScreen() : onBoardingScreen();
-  }
-
-  Widget onBoardingScreen() {
     return Scaffold(
       // backgroundColor: AppColors.colorWhiteHighEmp,
       body: Stack(alignment: Alignment.center, children: [
@@ -130,8 +109,24 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                   color: AppColors.colorPrimary,
                                 ),
                                 child: MaterialButton(
-                                  onPressed:
-                                      _nextPage, // Use the updated onPressed method
+                                  onPressed: () async {
+                                    if (currentIndex == contents.length - 1) {
+                                      SharedPreferences prefs =
+                                          await SharedPreferences.getInstance();
+                                      await prefs.setBool(
+                                          'has_completed_onboarding', true);
+                                      Navigator.pushReplacement(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (_) =>
+                                                  const LoginScreen()));
+                                    }
+                                    _controller.nextPage(
+                                      duration:
+                                          const Duration(milliseconds: 100),
+                                      curve: Curves.bounceIn,
+                                    );
+                                  },
                                   child: Center(
                                     child: Icon(
                                       currentIndex == contents.length - 1
@@ -175,20 +170,5 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             color: currentIndex == index
                 ? AppColors.colorPrimary
                 : AppColors.colorWhiteHighEmp));
-  }
-
-  void _nextPage() async {
-    if (currentIndex == contents.length - 1) {
-      await saveOnboardingStatus();
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (_) => const LoginScreen()),
-      );
-    } else {
-      _controller.nextPage(
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.easeInOut,
-      );
-    }
   }
 }
