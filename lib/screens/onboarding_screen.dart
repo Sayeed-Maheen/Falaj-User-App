@@ -1,3 +1,4 @@
+import 'package:falaj_user_app/screens/set_language_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -119,7 +120,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                           context,
                                           MaterialPageRoute(
                                               builder: (_) =>
-                                                  const LoginScreen()));
+                                                  const SetLanguageScreen()));
                                     }
                                     _controller.nextPage(
                                       duration:

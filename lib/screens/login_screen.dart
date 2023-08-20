@@ -4,6 +4,7 @@ import 'package:falaj_user_app/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '../design_models/remember_me_model.dart';
 import '../utils/app_colors.dart';
@@ -115,7 +116,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   padding: REdgeInsets.only(top: 76),
                   child: Center(
                     child: Text(
-                      "Welcome Back",
+                      "welcomeBack".tr,
                       style: TextStyle(
                         fontSize: 24.sp,
                         fontWeight: FontWeight.w700,
