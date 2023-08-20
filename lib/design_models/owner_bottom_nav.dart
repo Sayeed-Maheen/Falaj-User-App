@@ -1,3 +1,4 @@
+import 'package:falaj_user_app/screens/owner_home_screen.dart';
 import 'package:falaj_user_app/screens/owner_inbox_screen.dart';
 import 'package:falaj_user_app/screens/users_profile_screen.dart';
 import 'package:falaj_user_app/screens/rented_falaj_screen.dart';
@@ -21,7 +22,7 @@ class _OwnerBottomNavState extends State<OwnerBottomNav> {
   int _currentIndex = 0;
 
   final tabs = [
-    UsersHomeScreen(),
+    OwnerHomeScreen(),
     const RentedFalajScreen(),
     OwnerInboxScreen(),
     const OwnerProfileScreen()
@@ -66,7 +67,7 @@ class _OwnerBottomNavState extends State<OwnerBottomNav> {
                   height: 24.h,
                   width: 24.w,
                   color:
-                  _currentIndex == 0 ? AppColors.colorPrimary : Colors.grey,
+                      _currentIndex == 0 ? AppColors.colorPrimary : Colors.grey,
                 ),
                 label: "My Falaj",
               ),
@@ -76,7 +77,7 @@ class _OwnerBottomNavState extends State<OwnerBottomNav> {
                   height: 24.h,
                   width: 24.w,
                   color:
-                  _currentIndex == 1 ? AppColors.colorPrimary : Colors.grey,
+                      _currentIndex == 1 ? AppColors.colorPrimary : Colors.grey,
                 ),
                 label: "Request",
               ),
@@ -86,7 +87,7 @@ class _OwnerBottomNavState extends State<OwnerBottomNav> {
                   height: 24.h,
                   width: 24.w,
                   color:
-                  _currentIndex == 2 ? AppColors.colorPrimary : Colors.grey,
+                      _currentIndex == 2 ? AppColors.colorPrimary : Colors.grey,
                 ),
                 label: "Inbox",
               ),
@@ -96,7 +97,7 @@ class _OwnerBottomNavState extends State<OwnerBottomNav> {
                   height: 24.h,
                   width: 24.w,
                   color:
-                  _currentIndex == 3 ? AppColors.colorPrimary : Colors.grey,
+                      _currentIndex == 3 ? AppColors.colorPrimary : Colors.grey,
                 ),
                 label: "Profile",
               ),
