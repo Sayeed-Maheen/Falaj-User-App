@@ -1,3 +1,4 @@
+import 'package:falaj_user_app/screens/owner_chat_screen.dart';
 import 'package:falaj_user_app/screens/users_chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -5,8 +6,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../utils/app_colors.dart';
 
-class UsersInboxScreen extends StatelessWidget {
-  UsersInboxScreen({Key? key}) : super(key: key);
+class OwnerInboxScreen extends StatelessWidget {
+  OwnerInboxScreen({Key? key}) : super(key: key);
 
   final List<String> _images = [
     'assets/images/inbox1.png',
@@ -78,10 +79,11 @@ class UsersInboxScreen extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const UsersChatScreen()));
+                            builder: (context) => const OwnerChatScreen()));
                   },
                   child: Container(
-                      padding: REdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                      padding:
+                          REdgeInsets.symmetric(horizontal: 16, vertical: 8),
                       decoration: BoxDecoration(
                           color: AppColors.colorWhiteHighEmp,
                           borderRadius: BorderRadius.circular(12)),

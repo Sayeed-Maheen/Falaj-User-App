@@ -1,3 +1,4 @@
+import 'package:falaj_user_app/design_models/owner_bottom_nav.dart';
 import 'package:falaj_user_app/design_models/users_bottom_nav.dart';
 import 'package:falaj_user_app/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
@@ -98,71 +99,74 @@ class _LoginScreenState extends State<LoginScreen> {
         statusBarIconBrightness: Brightness.dark,
       ),
     );
-    return Scaffold(
-      backgroundColor: AppColors.colorWhiteHighEmp,
-      body: SafeArea(
-        child: Form(
-          key: _formField,
-          child: Column(
-            children: [
-              Padding(
-                padding: REdgeInsets.only(top: 76),
-                child: Center(
-                  child: Text(
-                    "Welcome Back",
-                    style: TextStyle(
-                      fontSize: 24.sp,
-                      fontWeight: FontWeight.w700,
-                      color: AppColors.colorBlackHighEmp,
+    return WillPopScope(
+      onWillPop: () async {
+        SystemNavigator.pop();
+        return false;
+      },
+      child: Scaffold(
+        backgroundColor: AppColors.colorWhiteHighEmp,
+        body: SafeArea(
+          child: Form(
+            key: _formField,
+            child: Column(
+              children: [
+                Padding(
+                  padding: REdgeInsets.only(top: 76),
+                  child: Center(
+                    child: Text(
+                      "Welcome Back",
+                      style: TextStyle(
+                        fontSize: 24.sp,
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.colorBlackHighEmp,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: REdgeInsets.only(top: 4),
-                child: Center(
-                  child: Text(
-                    "To your favorite Book app.",
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w400,
-                      color: AppColors.colorBlackLowEmp,
+                Padding(
+                  padding: REdgeInsets.only(top: 4),
+                  child: Center(
+                    child: Text(
+                      "To your favorite Book app.",
+                      style: TextStyle(
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.colorBlackLowEmp,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              SizedBox(height: 24.h),
-              CustomSegmentedControl(
-                segments: const ["Owner", "User"],
-                currentIndex: _currentSelection,
-                onSegmentTapped: (index) {
-                  setState(() {
-                    _currentSelection = index;
-                    _pageController.animateToPage(
-                      index,
-                      duration: const Duration(milliseconds: 500),
-                      curve: Curves.ease,
-                    );
-                  });
-                },
-              ),
-              SizedBox(height: 40.h),
-              Expanded(
-                child: PageView(
-                  controller: _pageController,
-                  onPageChanged: (index) {
+                SizedBox(height: 24.h),
+                CustomSegmentedControl(
+                  segments: const ["Owner", "User"],
+                  currentIndex: _currentSelection,
+                  onSegmentTapped: (index) {
                     setState(() {
                       _currentSelection = index;
+                      _pageController.animateToPage(
+                        index,
+                        duration: const Duration(milliseconds: 500),
+                        curve: Curves.ease,
+                      );
                     });
                   },
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 16),
-                      child: SizedBox(
+                ),
+                Expanded(
+                  child: PageView(
+                    controller: _pageController,
+                    onPageChanged: (index) {
+                      setState(() {
+                        _currentSelection = index;
+                      });
+                    },
+                    children: [
+                      SizedBox(
                         child: SingleChildScrollView(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+                              SizedBox(height: 40.h),
                               Padding(
                                 padding: REdgeInsets.symmetric(horizontal: 16),
                                 child: Text(
@@ -354,7 +358,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                           context,
                                           MaterialPageRoute<void>(
                                               builder: (BuildContext context) =>
-                                                  const UsersBottomNav()),
+                                                  const OwnerBottomNav()),
                                           ModalRoute.withName('/'),
                                         );
                                       }
@@ -404,14 +408,12 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 16),
-                      child: SizedBox(
+                      SizedBox(
                         child: SingleChildScrollView(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+                              SizedBox(height: 40.h),
                               Padding(
                                 padding: REdgeInsets.symmetric(horizontal: 16),
                                 child: Text(
@@ -502,7 +504,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   validator: (value) {
                                     if (value!.isEmpty) {
                                       return "Enter Password";
-                                    } else if (ownerPasswordController
+                                    } else if (userPasswordController
                                             .text.length <
                                         6) {
                                       return "Password length should be more than 6 characters";
@@ -653,11 +655,11 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

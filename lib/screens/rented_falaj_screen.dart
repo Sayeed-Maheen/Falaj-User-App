@@ -1,6 +1,7 @@
 import 'package:falaj_user_app/design_models/users_bottom_nav.dart';
 import 'package:falaj_user_app/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../design_models/remember_me_model.dart';
@@ -108,6 +109,7 @@ class _RentedFalajScreenState extends State<RentedFalajScreen> {
     return Scaffold(
       backgroundColor: AppColors.colorWhiteHighEmp,
       appBar: AppBar(
+        systemOverlayStyle: SystemUiOverlayStyle.dark,
         flexibleSpace: Container(
           color: AppColors.colorWhiteHighEmp, // Set a fixed color here
         ),
