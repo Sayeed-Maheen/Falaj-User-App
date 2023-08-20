@@ -144,7 +144,7 @@ class UsersHomeScreen extends StatelessWidget {
                                           color: AppColors.colorBlackHighEmp,
                                         ),
                                       ),
-                                      SizedBox(width: 55.w),
+                                      SizedBox(width: 45.w),
                                       Row(
                                         children: [
                                           const Icon(Icons.access_time_filled,

@@ -189,7 +189,7 @@ class _RentedFalajScreenState extends State<RentedFalajScreen> {
                                                   AppColors.colorBlackHighEmp,
                                             ),
                                           ),
-                                          SizedBox(width: 55.w),
+                                          SizedBox(width: 45.w),
                                           Row(
                                             children: [
                                               const Icon(
@@ -309,7 +309,7 @@ class _RentedFalajScreenState extends State<RentedFalajScreen> {
                                                   AppColors.colorBlackHighEmp,
                                             ),
                                           ),
-                                          SizedBox(width: 55.w),
+                                          SizedBox(width: 45.w),
                                           Row(
                                             children: [
                                               const Icon(

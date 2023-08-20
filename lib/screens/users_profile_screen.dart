@@ -90,7 +90,7 @@ class _UsersProfileScreenState extends State<UsersProfileScreen> {
                       ),
                     ),
                     Padding(
-                      padding: REdgeInsets.only(right: 15, bottom: 6),
+                      padding: REdgeInsets.only(right: 15, bottom: 0),
                       child: InkWell(
                         onTap: () async {
                           selectedImagePath = await selectImageFromGallery();
@@ -103,7 +103,7 @@ class _UsersProfileScreenState extends State<UsersProfileScreen> {
                           width: 20,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(100),
-                              color: AppColors.colorPrimaryDark),
+                              color: AppColors.colorPrimary),
                           child: const Icon(
                             Icons.edit,
                             size: 12,
@@ -224,7 +224,7 @@ class _UsersProfileScreenState extends State<UsersProfileScreen> {
                         ),
                       ],
                     ),
-                    Icon(
+                    const Icon(
                       Icons.arrow_forward_ios_rounded,
                       color: AppColors.colorGreyDark,
                       size: 20,
@@ -262,7 +262,7 @@ class _UsersProfileScreenState extends State<UsersProfileScreen> {
                         ),
                       ],
                     ),
-                    Icon(
+                    const Icon(
                       Icons.arrow_forward_ios_rounded,
                       color: AppColors.colorGreyDark,
                       size: 20,
@@ -298,7 +298,7 @@ class _UsersProfileScreenState extends State<UsersProfileScreen> {
                         ),
                       ],
                     ),
-                    Icon(
+                    const Icon(
                       Icons.arrow_forward_ios_rounded,
                       color: AppColors.colorGreyDark,
                       size: 20,
