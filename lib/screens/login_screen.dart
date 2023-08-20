@@ -1,6 +1,7 @@
-import 'package:falaj_user_app/design_models/my_bottom_nav.dart';
+import 'package:falaj_user_app/design_models/users_bottom_nav.dart';
 import 'package:falaj_user_app/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../design_models/remember_me_model.dart';
@@ -92,6 +93,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarIconBrightness: Brightness.dark,
+      ),
+    );
     return Scaffold(
       backgroundColor: AppColors.colorWhiteHighEmp,
       body: SafeArea(
@@ -348,7 +354,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                           context,
                                           MaterialPageRoute<void>(
                                               builder: (BuildContext context) =>
-                                                  const MyBottomNav()),
+                                                  const UsersBottomNav()),
                                           ModalRoute.withName('/'),
                                         );
                                       }
@@ -597,7 +603,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                           context,
                                           MaterialPageRoute<void>(
                                               builder: (BuildContext context) =>
-                                                  const MyBottomNav()),
+                                                  const UsersBottomNav()),
                                           ModalRoute.withName('/'),
                                         );
                                       }

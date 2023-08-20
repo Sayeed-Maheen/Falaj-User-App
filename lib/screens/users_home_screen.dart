@@ -1,10 +1,11 @@
 import 'package:falaj_user_app/screens/falaj_details_screen.dart';
 import 'package:falaj_user_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
+class UsersHomeScreen extends StatelessWidget {
+  UsersHomeScreen({super.key});
 
   final List<String> _images = [
     'assets/images/img1.png',
@@ -14,6 +15,11 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarIconBrightness: Brightness.dark,
+      ),
+    );
     return Scaffold(
       backgroundColor: AppColors.colorWhiteHighEmp,
       body: SafeArea(
@@ -103,12 +109,15 @@ class HomeScreen extends StatelessWidget {
                     elevation: 3,
                     child: InkWell(
                       onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => const FalajDetailsScreen()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const FalajDetailsScreen()));
                       },
                       child: Container(
-                          padding:
-                              REdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                          padding: REdgeInsets.symmetric(
+                              horizontal: 12, vertical: 8),
                           decoration: BoxDecoration(
                               color: AppColors.colorWhiteHighEmp,
                               borderRadius: BorderRadius.circular(12)),

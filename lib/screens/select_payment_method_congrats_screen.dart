@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../design_models/my_bottom_nav.dart';
+import '../design_models/users_bottom_nav.dart';
 import '../utils/app_colors.dart';
 
 class SelectPaymentMethodCongratsScreen extends StatelessWidget {
@@ -46,7 +46,7 @@ class SelectPaymentMethodCongratsScreen extends StatelessWidget {
           Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(
-                  builder: (BuildContext context) => const MyBottomNav()),
+                  builder: (BuildContext context) => const UsersBottomNav()),
               ModalRoute.withName('/'));
         },
         child: Container(

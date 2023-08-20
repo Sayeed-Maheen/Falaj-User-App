@@ -9,14 +9,14 @@ import 'package:image_picker/image_picker.dart';
 import '../utils/app_colors.dart';
 import 'login_screen.dart';
 
-class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+class UsersProfileScreen extends StatefulWidget {
+  const UsersProfileScreen({super.key});
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  State<UsersProfileScreen> createState() => _UsersProfileScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _UsersProfileScreenState extends State<UsersProfileScreen> {
   String selectedImagePath = '';
   final double imageSize = 100;
   selectImageFromGallery() async {

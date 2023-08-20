@@ -1,4 +1,4 @@
-import 'package:falaj_user_app/design_models/my_bottom_nav.dart';
+import 'package:falaj_user_app/design_models/users_bottom_nav.dart';
 import 'package:falaj_user_app/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

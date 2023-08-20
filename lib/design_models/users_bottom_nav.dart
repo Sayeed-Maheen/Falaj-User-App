@@ -1,23 +1,29 @@
-import 'package:falaj_user_app/screens/profile_screen.dart';
+import 'package:falaj_user_app/screens/users_profile_screen.dart';
 import 'package:falaj_user_app/screens/rented_falaj_screen.dart';
+import 'package:falaj_user_app/screens/users_inbox_screen.dart';
 import 'package:falaj_user_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../screens/homeScreen.dart';
+import '../screens/users_home_screen.dart';
 
-class MyBottomNav extends StatefulWidget {
-  const MyBottomNav({Key? key}) : super(key: key);
+class UsersBottomNav extends StatefulWidget {
+  const UsersBottomNav({Key? key}) : super(key: key);
 
   @override
-  State<MyBottomNav> createState() => _MyBottomNavState();
+  State<UsersBottomNav> createState() => _UsersBottomNavState();
 }
 
-class _MyBottomNavState extends State<MyBottomNav> {
+class _UsersBottomNavState extends State<UsersBottomNav> {
   int _currentIndex = 0;
 
-  final tabs = [HomeScreen(), RentedFalajScreen(), Container(), const ProfileScreen()];
+  final tabs = [
+    UsersHomeScreen(),
+    const RentedFalajScreen(),
+    UsersInboxScreen(),
+    const UsersProfileScreen()
+  ];
 
   @override
   Widget build(BuildContext context) {

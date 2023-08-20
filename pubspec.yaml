@@ -45,6 +45,7 @@ dependencies:
   material_segmented_control:
   image_picker: ^1.0.2
   flutter_switch: ^0.3.2
+  flutter_keyboard_visibility: ^5.4.1
 
 
 dev_dependencies:
