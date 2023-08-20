@@ -727,12 +727,12 @@ class _SignupScreenState extends State<SignupScreen> {
                               ),
                             ),
                           ),
-                          SizedBox(height: 12.h),
-                          Text(
-                            _filePath,
-                            style: const TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold),
-                          ),
+                          // SizedBox(height: 12.h),
+                          // Text(
+                          //   _filePath,
+                          //   style: const TextStyle(
+                          //       fontSize: 16, fontWeight: FontWeight.bold),
+                          // ),
                           SizedBox(height: 32.h),
                           Padding(
                             padding: REdgeInsets.symmetric(horizontal: 16),
