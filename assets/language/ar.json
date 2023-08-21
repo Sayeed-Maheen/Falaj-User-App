@@ -64,7 +64,6 @@
   "receiveFund": "سوف تستلم الملبغ  خلال  ايام",
   "myFalaj": "افلاجي",
   "reqForSaleHistory": "سجل الطلبات",
-
   "ownedTime": "الوقت المملوك",
   "reqForSale": "طلب  للايجار",
   "reqForSale2": "طلب  للاجيار",
@@ -73,10 +72,7 @@
   "reqSubmit": "تم تقديم طلبك للبيع",
   "close": "يغلق",
   "bank": "بنك",
-
   "receiverAccount": "رقم حساب المستلم",
   "senderAccount": "رقم حساب المرسل",
   "transactionDocument": "وثيقة الصفقة"
-
-
 }

@@ -64,8 +64,6 @@
   "receiveFund": "You will receive funds within few days.",
   "myFalaj": "My Falaj",
   "reqForSaleHistory": "Request for Sale History",
-
-
   "ownedTime": "Owned Time",
   "reqForSale": "Request for Sale",
   "reqForSale2": "REQUEST FOR SALE",
@@ -74,11 +72,7 @@
   "reqSubmit": "Your request for sale has been submitted",
   "close": "Close",
   "bank": "Bank",
-
   "receiverAccount": "Receiver Account Number",
   "senderAccount": "Sender Account Number",
   "transactionDocument": "Transaction Document"
-
-
-
 }

@@ -288,7 +288,7 @@ class _SignupScreenState extends State<SignupScreen> {
             ),
             SizedBox(height: 24.h),
             CustomSegmentedControl(
-              segments:  ["owner".tr, "user".tr],
+              segments: ["owner".tr, "user".tr],
               currentIndex: _currentSelection,
               onSegmentTapped: (index) {
                 setState(() {
