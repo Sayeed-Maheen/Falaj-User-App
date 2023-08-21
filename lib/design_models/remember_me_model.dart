@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '../utils/app_colors.dart';
-
 
 class RememberMeModel extends StatefulWidget {
   const RememberMeModel({super.key});
@@ -44,7 +44,7 @@ class _RememberMeModelState extends State<RememberMeModel> {
           ),
         ),
         Text(
-          "Remember me",
+          "rememberMe".tr,
           style: TextStyle(
             fontSize: 12.sp,
             fontWeight: FontWeight.w600,

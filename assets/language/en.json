@@ -1,4 +1,3 @@
-
 {
   "language": "English",
   "welcomeBack": "Welcome Back",
@@ -11,8 +10,19 @@
   "signUpTo": "Sign Up to",
   "yourName": "Your Name",
   "createPassword": "Create Password",
-  "rewritePassword": "Rewrite Password"
+  "rewritePassword": "Rewrite Password",
 
+
+  "favouriteBookApp": "To your favorite Book app.",
+  "owner": "Owner",
+  "user": "User",
+  "rememberMe": "Remember me",
+
+
+  "falajName": "Falaj name",
+  "legalDocument": "Legal Documents",
+  "uploadHere": "Upload here",
+  "signup": "Signup"
 
 
 }

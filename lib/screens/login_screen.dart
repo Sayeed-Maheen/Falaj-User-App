@@ -129,7 +129,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   padding: REdgeInsets.only(top: 4),
                   child: Center(
                     child: Text(
-                      "To your favorite Book app.",
+                      "favouriteBookApp".tr,
                       style: TextStyle(
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w400,
@@ -140,7 +140,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(height: 24.h),
                 CustomSegmentedControl(
-                  segments: const ["Owner", "User"],
+                  segments:  ["owner".tr, "user".tr],
                   currentIndex: _currentSelection,
                   onSegmentTapped: (index) {
                     setState(() {

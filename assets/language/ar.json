@@ -10,5 +10,15 @@
   "signUpTo": "تسجيل  حساب",
   "yourName": "الاسم",
   "createPassword": "انشاء كلمة  السر",
-  "rewritePassword": "اعادة كتابة  كلمة السر"
+  "rewritePassword": "اعادة كتابة  كلمة السر",
+
+  "favouriteBookApp": "لافضل  تطبيق بادارة الافلاج",
+  "owner": "مالك",
+  "user": "مستخدم",
+  "rememberMe": "تذكرني",
+
+  "falajName": "اسم الفلج",
+  "legalDocument": "الاوراق القانونية",
+  "uploadHere": "تحميل",
+  "signup": "التسجيل"
 }

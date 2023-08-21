@@ -277,7 +277,7 @@ class _SignupScreenState extends State<SignupScreen> {
               padding: REdgeInsets.only(top: 4),
               child: Center(
                 child: Text(
-                  "Your favorite Book app.",
+                  "favouriteBookApp".tr,
                   style: TextStyle(
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
@@ -288,7 +288,7 @@ class _SignupScreenState extends State<SignupScreen> {
             ),
             SizedBox(height: 24.h),
             CustomSegmentedControl(
-              segments: const ["Owner", "User"],
+              segments:  ["owner".tr, "user".tr],
               currentIndex: _currentSelection,
               onSegmentTapped: (index) {
                 setState(() {
@@ -625,7 +625,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           Padding(
                             padding: REdgeInsets.symmetric(horizontal: 16),
                             child: Text(
-                              "Falaj name",
+                              "falajName".tr,
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w600,
@@ -691,7 +691,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           Padding(
                             padding: REdgeInsets.symmetric(horizontal: 16),
                             child: Text(
-                              "Legal Documents",
+                              "legalDocument".tr,
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w600,
@@ -716,7 +716,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                       borderRadius: BorderRadius.circular(12)),
                                   child: Center(
                                     child: Text(
-                                      "Upload here",
+                                      "uploadHere".tr,
                                       style: TextStyle(
                                         fontSize: 18.sp,
                                         fontWeight: FontWeight.w600,
@@ -747,7 +747,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                     showOwnerDialog();
                                   }
                                 },
-                                text: "Sign In"),
+                                text: "signup".tr),
                           ),
                           SizedBox(height: 16.h),
                         ],
@@ -763,7 +763,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           Padding(
                             padding: REdgeInsets.symmetric(horizontal: 16),
                             child: Text(
-                              "Your Name",
+                              "yourName".tr,
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w600,
@@ -833,7 +833,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           Padding(
                             padding: REdgeInsets.symmetric(horizontal: 16),
                             child: Text(
-                              "Your Email",
+                              "yourEmail".tr,
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w600,
@@ -903,7 +903,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           Padding(
                             padding: REdgeInsets.symmetric(horizontal: 16),
                             child: Text(
-                              "Create Password",
+                              "createPassword".tr,
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w600,
@@ -950,7 +950,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                           size: 20),
                                 ),
                                 contentPadding:
-                                    const EdgeInsets.fromLTRB(16, 16, -4, 16),
+                                    const EdgeInsets.fromLTRB(16, 16, 16, 16),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(8),
                                   borderSide: const BorderSide(
@@ -986,7 +986,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           Padding(
                             padding: REdgeInsets.symmetric(horizontal: 16),
                             child: Text(
-                              "Rewrite Password",
+                              "rewritePassword".tr,
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w600,
@@ -1033,7 +1033,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                           size: 20),
                                 ),
                                 contentPadding:
-                                    const EdgeInsets.fromLTRB(16, 16, -4, 16),
+                                    const EdgeInsets.fromLTRB(16, 16, 16, 16),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(8),
                                   borderSide: const BorderSide(
@@ -1078,7 +1078,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                     showUserDialog();
                                   }
                                 },
-                                text: "Sign In"),
+                                text: "signup".tr),
                           ),
                           SizedBox(height: 16.h),
                         ],
