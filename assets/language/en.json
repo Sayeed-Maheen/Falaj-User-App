@@ -72,7 +72,12 @@
   "activeHours": "Active Hours",
   "rentAmount": "Rent Amount",
   "reqSubmit": "Your request for sale has been submitted",
-  "close": "Close"
+  "close": "Close",
+  "bank": "Bank",
+
+  "receiverAccount": "Receiver Account Number",
+  "senderAccount": "Sender Account Number",
+  "transactionDocument": "Transaction Document"
 
 
 

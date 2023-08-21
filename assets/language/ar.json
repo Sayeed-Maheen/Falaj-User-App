@@ -71,7 +71,12 @@
   "activeHours": "الساعات النشطة",
   "rentAmount": "اجمالي الايجار",
   "reqSubmit": "تم تقديم طلبك للبيع",
-  "close": "يغلق"
+  "close": "يغلق",
+  "bank": "بنك",
+
+  "receiverAccount": "رقم حساب المستلم",
+  "senderAccount": "رقم حساب المرسل",
+  "transactionDocument": "وثيقة الصفقة"
 
 
 }
