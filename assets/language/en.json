@@ -24,14 +24,23 @@
   "submitted": "Submitted",
   "accountCreated": "Your account was created successfully",
   "gotIt": "Got it",
-
-
-
   "allTheFalaj": "All the Falaj",
   "home": "Home",
   "rented": "Rented",
   "inbox": "Inbox",
-  "profile": "Profile"
+  "profile": "Profile",
+  "availableTime": "Available Time",
+  "rentNow": "Rent Now",
+  "season": "/Session",
+  "selectPaymentMethod": "Select Payment Method",
+  "sub": "Subscription",
+  "amount": "Amount",
+  "totalAmount": "Total amount",
+  "selectedPaymentMethod": "Selected Payment Method",
+  "continue": "Continue",
+  "congrats": "Congrats!",
+  "success": "Your payment went successfully",
+  "backToHome": "Back to Home"
 
 
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '../../design_models/users_bottom_nav.dart';
 import '../../utils/app_colors.dart';
@@ -21,7 +22,7 @@ class SelectPaymentMethodCongratsScreen extends StatelessWidget {
             width: 306,
           ),
           Text(
-            'Congrats!',
+            'congrats'.tr,
             textAlign: TextAlign.center,
             style: TextStyle(
               color: AppColors.colorGreen,
@@ -31,7 +32,7 @@ class SelectPaymentMethodCongratsScreen extends StatelessWidget {
           ),
           SizedBox(height: 4.h),
           Text(
-            'Your payment went successfully',
+            'success'.tr,
             textAlign: TextAlign.center,
             style: TextStyle(
               color: AppColors.colorGreyDark,
@@ -58,7 +59,7 @@ class SelectPaymentMethodCongratsScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(100)),
           child: Center(
             child: Text(
-              'Back to Home',
+              'backToHome'.tr,
               style: TextStyle(
                 color: AppColors.colorWhiteHighEmp,
                 fontSize: 14.sp,

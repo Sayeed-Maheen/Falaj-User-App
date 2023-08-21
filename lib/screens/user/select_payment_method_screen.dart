@@ -1,6 +1,7 @@
 import 'package:falaj_user_app/screens/user/select_payment_method_congrats_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '../../utils/app_colors.dart';
 
@@ -32,9 +33,9 @@ class _SelectPaymentMethodScreenState extends State<SelectPaymentMethodScreen> {
             //  color: AppColors.colorBlackHighEmp,
           ),
         ),
-        title: const Text(
-          "Select Payment Method",
-          style: TextStyle(
+        title: Text(
+          "selectPaymentMethod".tr,
+          style: const TextStyle(
               color: AppColors.colorBlackHighEmp, fontWeight: FontWeight.w600),
         ),
       ),
@@ -54,7 +55,7 @@ class _SelectPaymentMethodScreenState extends State<SelectPaymentMethodScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Subscription",
+                      "sub".tr,
                       style: TextStyle(
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w300,
@@ -76,7 +77,7 @@ class _SelectPaymentMethodScreenState extends State<SelectPaymentMethodScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Amount",
+                      "amount".tr,
                       style: TextStyle(
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w300,
@@ -120,7 +121,7 @@ class _SelectPaymentMethodScreenState extends State<SelectPaymentMethodScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Total amount",
+                      "totalAmount".tr,
                       style: TextStyle(
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w300,
@@ -141,9 +142,9 @@ class _SelectPaymentMethodScreenState extends State<SelectPaymentMethodScreen> {
             ),
           ),
           Padding(
-            padding: REdgeInsets.only(left: 16, bottom: 16),
+            padding: REdgeInsets.only(left: 16, bottom: 16, right: 16),
             child: Text(
-              "Selected Payment Method",
+              "selectedPaymentMethod".tr,
               style: TextStyle(
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w600,
@@ -153,7 +154,7 @@ class _SelectPaymentMethodScreenState extends State<SelectPaymentMethodScreen> {
           ),
           Container(
             margin: REdgeInsets.symmetric(horizontal: 16),
-            padding: REdgeInsets.only(top: 12, bottom: 12, left: 12),
+            padding: REdgeInsets.only(top: 12, bottom: 12, left: 12, right: 12),
             decoration: BoxDecoration(
               color: AppColors.colorGrey2,
               borderRadius: BorderRadius.circular(12),
@@ -185,8 +186,11 @@ class _SelectPaymentMethodScreenState extends State<SelectPaymentMethodScreen> {
       )),
       bottomNavigationBar: InkWell(
         onTap: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const SelectPaymentMethodCongratsScreen()));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) =>
+                      const SelectPaymentMethodCongratsScreen()));
         },
         child: Container(
           height: 46.h,
@@ -197,7 +201,7 @@ class _SelectPaymentMethodScreenState extends State<SelectPaymentMethodScreen> {
               borderRadius: BorderRadius.circular(100)),
           child: Center(
             child: Text(
-              'Continue',
+              'continue'.tr,
               style: TextStyle(
                 color: AppColors.colorWhiteHighEmp,
                 fontSize: 14.sp,

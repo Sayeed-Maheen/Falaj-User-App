@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 class FalajDetailsScreen extends StatefulWidget {
   const FalajDetailsScreen({Key? key}) : super(key: key);
@@ -114,7 +115,7 @@ class _FalajDetailsScreenState extends State<FalajDetailsScreen> {
                   ),
                   SizedBox(height: 16.h),
                   Text(
-                    "Available Time",
+                      "availableTime".tr,
                     style: TextStyle(
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w700,
@@ -200,7 +201,7 @@ class _FalajDetailsScreenState extends State<FalajDetailsScreen> {
                     borderRadius: BorderRadius.circular(100)),
                 child: Center(
                   child: Text(
-                    "Rent Now",
+                    "rentNow".tr,
                     style: TextStyle(
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w800,
@@ -222,7 +223,7 @@ class _FalajDetailsScreenState extends State<FalajDetailsScreen> {
                 ),
                 SizedBox(width: 4.w),
                 Text(
-                  "/ Session",
+                  "season".tr,
                   style: TextStyle(
                     fontSize: 10.sp,
                     fontWeight: FontWeight.w400,

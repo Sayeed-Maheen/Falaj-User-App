@@ -24,11 +24,21 @@
   "submitted": "قدم",
   "accountCreated": "سنقوم  باعلامك  عند الموافقة",
   "gotIt": "تم",
-
-
   "allTheFalaj": "كافة  الافلاج",
   "home": "الرئيسية",
   "rented": "المؤجر",
   "inbox": "الوارد",
-  "profile": "الحساب الشخصي"
+  "profile": "الحساب الشخصي",
+  "availableTime": "الوقت المتاح",
+  "rentNow": "استأجر الان",
+  "season": "/للجلسة الواحدة",
+  "selectPaymentMethod": "اختر طريقة الدفع",
+  "sub": "مدة الاشتراك",
+  "amount": "الاجمالي",
+  "totalAmount": "الاجمالي",
+  "selectedPaymentMethod": "اختر  طريقة الدفع",
+  "continue": "الاستمرار",
+  "congrats": "هنيئا!",
+  "success": "تم  السداد  بنجاح",
+  "backToHome": "العودة  الى الرئيسية"
 }
