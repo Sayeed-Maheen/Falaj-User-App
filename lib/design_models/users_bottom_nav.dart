@@ -5,6 +5,7 @@ import 'package:falaj_user_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 import '../screens/user/users_home_screen.dart';
 
@@ -66,7 +67,7 @@ class _UsersBottomNavState extends State<UsersBottomNav> {
                   color:
                       _currentIndex == 0 ? AppColors.colorPrimary : Colors.grey,
                 ),
-                label: "Home",
+                label: "home".tr,
               ),
               BottomNavigationBarItem(
                 icon: SvgPicture.asset(
@@ -76,7 +77,7 @@ class _UsersBottomNavState extends State<UsersBottomNav> {
                   color:
                       _currentIndex == 1 ? AppColors.colorPrimary : Colors.grey,
                 ),
-                label: "Rented",
+                label: "rented".tr,
               ),
               BottomNavigationBarItem(
                 icon: SvgPicture.asset(
@@ -86,7 +87,7 @@ class _UsersBottomNavState extends State<UsersBottomNav> {
                   color:
                       _currentIndex == 2 ? AppColors.colorPrimary : Colors.grey,
                 ),
-                label: "Inbox",
+                label: "inbox".tr,
               ),
               BottomNavigationBarItem(
                 icon: SvgPicture.asset(
@@ -96,7 +97,7 @@ class _UsersBottomNavState extends State<UsersBottomNav> {
                   color:
                       _currentIndex == 3 ? AppColors.colorPrimary : Colors.grey,
                 ),
-                label: "Profile",
+                label: "profile".tr,
               ),
             ],
             onTap: (index) {

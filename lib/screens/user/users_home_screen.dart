@@ -3,6 +3,7 @@ import 'package:falaj_user_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class UsersHomeScreen extends StatelessWidget {
   UsersHomeScreen({super.key});
@@ -74,33 +75,30 @@ class UsersHomeScreen extends StatelessWidget {
                 children: [
                   SizedBox(height: 12.h),
                   Padding(
-                    padding: REdgeInsets.only(left: 16),
+                    padding: REdgeInsets.only(left: 16,right: 16),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "All the Falaj",
+                          "allTheFalaj".tr,
                           style: TextStyle(
                             fontSize: 16.sp,
                             fontWeight: FontWeight.w600,
                             color: AppColors.colorBlackHighEmp,
                           ),
                         ),
-                        TextButton(
-                          onPressed: () {},
-                          style: TextButton.styleFrom(
-                              //padding: const EdgeInsets.all(8),
-                              minimumSize: const Size(50, 20),
-                              tapTargetSize: MaterialTapTargetSize.shrinkWrap),
-                          child: Text(
-                            'See All',
-                            style: TextStyle(
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.colorPrimary,
+                      InkWell(
+                        onTap: () {},
+                        child: Text(
+                              'See All',
+                              style: TextStyle(
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w400,
+                                color: AppColors.colorPrimary,
+                              ),
                             ),
-                          ),
-                        ),
+                      ),
+
                       ],
                     ),
                   ),

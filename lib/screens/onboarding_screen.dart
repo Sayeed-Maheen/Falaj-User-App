@@ -120,7 +120,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                           context,
                                           MaterialPageRoute(
                                               builder: (_) =>
-                                                  const SetLanguageScreen()));
+                                                  const LoginScreen()));
                                     }
                                     _controller.nextPage(
                                       duration:
