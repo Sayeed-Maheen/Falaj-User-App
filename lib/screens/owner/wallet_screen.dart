@@ -2,6 +2,7 @@ import 'package:falaj_user_app/screens/owner/payout_request_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '../../utils/app_colors.dart';
 
@@ -25,9 +26,9 @@ class WalletScreen extends StatelessWidget {
             //  color: AppColors.colorBlackHighEmp,
           ),
         ),
-        title: const Text(
-          "Wallet",
-          style: TextStyle(
+        title: Text(
+          "wallet".tr,
+          style: const TextStyle(
             fontWeight: FontWeight.w600,
             color: AppColors.colorBlackHighEmp,
           ),
@@ -101,7 +102,7 @@ class WalletScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12)),
             child: Center(
               child: Text(
-                "Payout Request",
+                "payoutReq".tr,
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w800,

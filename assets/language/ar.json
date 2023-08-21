@@ -19,7 +19,7 @@
   "legalDocument": "الاوراق القانونية",
   "uploadHere": "تحميل",
   "signup": "التسجيل",
-  "congratss": "نهنئك , قد  تم  انشاء حسابك  بنجاح",
+  "congrats": "نهنئك , قد  تم  انشاء حسابك  بنجاح",
   "continueHomepage": "الاستمرار  للصفحة الرئيسية",
   "submitted": "قدم",
   "accountCreated": "سنقوم  باعلامك  عند الموافقة",
@@ -52,5 +52,17 @@
   "helpFaq": "المساعدة",
   "logOut": "تسجيل خروج",
   "changeLanguage": "تغيير اللغة",
-  "profile": "Profile"
+  "wallet": "المحفظة",
+  "payoutReq": "طلب  سحب الاموال",
+
+  "enterAmount": "ادخل المبلغ",
+  "paymentMethod": "طريقة الدفع",
+  "legalName": "الاسم القانوني الكامل",
+  "bankAccountNumber": "رقم حساب  البنك / الايبان",
+  "anyOtherDetails": "اي تفاصيل اضافية للبنك",
+  "reqNow": "اطلب  الان",
+  "reqSuccess": "تم  طلبك بنجاح",
+  "receiveFund": "سوف تستلم الملبغ  خلال  ايام"
+
+
 }

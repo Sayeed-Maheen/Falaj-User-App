@@ -2,6 +2,7 @@ import 'package:falaj_user_app/screens/user/users_chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '../../utils/app_colors.dart';
 
@@ -51,17 +52,9 @@ class UsersInboxScreen extends StatelessWidget {
             flexibleSpace: Container(
               color: AppColors.colorWhiteHighEmp, // Set a fixed color here
             ),
-            titleSpacing: -1,
-            leading: IconButton(
-              onPressed: () => Navigator.pop(context),
-              icon: const Icon(
-                Icons.arrow_back,
-                //  color: AppColors.colorBlackHighEmp,
-              ),
-            ),
-            title: const Text(
-              "Inbox",
-              style: TextStyle(
+            title: Text(
+              "inbox".tr,
+              style: const TextStyle(
                 fontWeight: FontWeight.w600,
                 color: AppColors.colorBlackHighEmp,
               ),

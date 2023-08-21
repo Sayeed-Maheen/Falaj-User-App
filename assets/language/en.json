@@ -51,7 +51,20 @@
   "privacy": "Privacy Policy",
   "helpFaq": "Help & FAQ",
   "logOut": "Log Out",
-  "changeLanguage": "Change language"
+  "changeLanguage": "Change language",
+  "wallet": "Wallet",
+  "payoutReq": "Payout Request",
+
+
+  "enterAmount": "Enter Amount",
+  "paymentMethod": "Payment Method",
+  "legalName": "Full Legal Name",
+  "bankAccountNumber": "Bank Account Number / IBAN",
+  "anyOtherDetails": "Any other bank detail",
+  "reqNow": "Request Now",
+  "reqSuccess": "Request Successful!",
+  "receiveFund": "You will receive funds within few days."
+
 
 
 }

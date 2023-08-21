@@ -3,6 +3,7 @@ import 'package:falaj_user_app/design_models/owner_bottom_nav.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '../../utils/app_colors.dart';
 
@@ -36,9 +37,9 @@ class _PayoutRequestScreenState extends State<PayoutRequestScreen> {
             //  color: AppColors.colorBlackHighEmp,
           ),
         ),
-        title: const Text(
-          "Payout Request",
-          style: TextStyle(
+        title:  Text(
+          "payoutReq".tr,
+          style: const TextStyle(
             fontWeight: FontWeight.w600,
             color: AppColors.colorBlackHighEmp,
           ),
@@ -97,7 +98,7 @@ class _PayoutRequestScreenState extends State<PayoutRequestScreen> {
           Padding(
             padding: REdgeInsets.symmetric(horizontal: 16),
             child: Text(
-              "Enter Amount",
+              "enterAmount".tr,
               style: TextStyle(
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w600,
@@ -165,7 +166,7 @@ class _PayoutRequestScreenState extends State<PayoutRequestScreen> {
           Padding(
             padding: REdgeInsets.symmetric(horizontal: 16),
             child: Text(
-              "Payment Method",
+              "paymentMethod".tr,
               style: TextStyle(
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w600,
@@ -230,7 +231,7 @@ class _PayoutRequestScreenState extends State<PayoutRequestScreen> {
           Padding(
             padding: REdgeInsets.symmetric(horizontal: 16),
             child: Text(
-              "Full Legal Name",
+              "legalName".tr,
               style: TextStyle(
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w600,
@@ -298,7 +299,7 @@ class _PayoutRequestScreenState extends State<PayoutRequestScreen> {
           Padding(
             padding: REdgeInsets.symmetric(horizontal: 16),
             child: Text(
-              "Bank Account Number / IBAN",
+              "bankAccountNumber".tr,
               style: TextStyle(
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w600,
@@ -367,7 +368,7 @@ class _PayoutRequestScreenState extends State<PayoutRequestScreen> {
           Padding(
             padding: REdgeInsets.symmetric(horizontal: 16),
             child: Text(
-              "Any other bank detail",
+              "anyOtherDetails".tr,
               style: TextStyle(
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w600,
@@ -458,7 +459,7 @@ class _PayoutRequestScreenState extends State<PayoutRequestScreen> {
                         ),
                         SizedBox(height: 24.h),
                         Text(
-                          'Request Successful!',
+                          'reqSuccess'.tr,
                           style: TextStyle(
                             color: const Color(0xFF3BCE7F),
                             fontSize: 24.sp,
@@ -467,7 +468,7 @@ class _PayoutRequestScreenState extends State<PayoutRequestScreen> {
                         ),
                         SizedBox(height: 4.h),
                         Text(
-                          'You will receive funds within few days.',
+                          'receiveFund'.tr,
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: const Color(0xFF474747),
@@ -493,7 +494,7 @@ class _PayoutRequestScreenState extends State<PayoutRequestScreen> {
                                 borderRadius: BorderRadius.circular(12)),
                             child: Center(
                               child: Text(
-                                "Back to Home",
+                                "backToHome".tr,
                                 style: TextStyle(
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w800,
@@ -516,7 +517,7 @@ class _PayoutRequestScreenState extends State<PayoutRequestScreen> {
                 borderRadius: BorderRadius.circular(12)),
             child: Center(
               child: Text(
-                "Request Now",
+                "reqNow".tr,
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w800,
