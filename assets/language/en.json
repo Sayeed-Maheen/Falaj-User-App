@@ -54,8 +54,6 @@
   "changeLanguage": "Change language",
   "wallet": "Wallet",
   "payoutReq": "Payout Request",
-
-
   "enterAmount": "Enter Amount",
   "paymentMethod": "Payment Method",
   "legalName": "Full Legal Name",
@@ -63,7 +61,18 @@
   "anyOtherDetails": "Any other bank detail",
   "reqNow": "Request Now",
   "reqSuccess": "Request Successful!",
-  "receiveFund": "You will receive funds within few days."
+  "receiveFund": "You will receive funds within few days.",
+  "myFalaj": "My Falaj",
+  "reqForSaleHistory": "Request for Sale History",
+
+
+  "ownedTime": "Owned Time",
+  "reqForSale": "Request for Sale",
+  "reqForSale2": "REQUEST FOR SALE",
+  "activeHours": "Active Hours",
+  "rentAmount": "Rent Amount",
+  "reqSubmit": "Your request for sale has been submitted",
+  "close": "Close"
 
 
 

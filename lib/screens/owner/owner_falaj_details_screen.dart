@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 import '../../design_models/users_bottom_nav.dart';
 
@@ -41,7 +42,7 @@ class _OwnerFalajDetailsScreenState extends State<OwnerFalajDetailsScreen> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  "REQUEST FOR SALE",
+                  "reqForSale2".tr,
                   style: TextStyle(
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w700,
@@ -50,7 +51,7 @@ class _OwnerFalajDetailsScreenState extends State<OwnerFalajDetailsScreen> {
                 ),
                 SizedBox(height: 16.h),
                 Text(
-                  'Active Hours',
+                  'activeHours'.tr,
                   style: TextStyle(
                     color: const Color(0xFF202020),
                     fontSize: 14.sp,
@@ -189,7 +190,7 @@ class _OwnerFalajDetailsScreenState extends State<OwnerFalajDetailsScreen> {
                 ),
                 SizedBox(height: 12.h),
                 Text(
-                  'Rent Amount',
+                  'rentAmount'.tr,
                   style: TextStyle(
                     color: const Color(0xFF202020),
                     fontSize: 14.sp,
@@ -337,7 +338,7 @@ class _OwnerFalajDetailsScreenState extends State<OwnerFalajDetailsScreen> {
                   width: 182.w,
                 ),
                 Text(
-                  "Congratulation",
+                  "congrats".tr,
                   style: TextStyle(
                     fontSize: 32.sp,
                     fontWeight: FontWeight.w800,
@@ -346,7 +347,7 @@ class _OwnerFalajDetailsScreenState extends State<OwnerFalajDetailsScreen> {
                 ),
                 SizedBox(height: 2.h),
                 Text(
-                  "Your request for sale has been submitted",
+                  "reqSubmit".tr,
                   style: TextStyle(
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w400,
@@ -372,7 +373,7 @@ class _OwnerFalajDetailsScreenState extends State<OwnerFalajDetailsScreen> {
                         borderRadius: BorderRadius.circular(100)),
                     child: Center(
                       child: Text(
-                        "Close",
+                        "close".tr,
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w800,
@@ -473,7 +474,7 @@ class _OwnerFalajDetailsScreenState extends State<OwnerFalajDetailsScreen> {
                   ),
                   SizedBox(height: 16.h),
                   Text(
-                    "Owned Time",
+                    "ownedTime".tr,
                     style: TextStyle(
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w700,
@@ -551,7 +552,7 @@ class _OwnerFalajDetailsScreenState extends State<OwnerFalajDetailsScreen> {
                 borderRadius: BorderRadius.circular(100)),
             child: Center(
               child: Text(
-                "Request for Sale",
+                "reqForSale".tr,
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w800,

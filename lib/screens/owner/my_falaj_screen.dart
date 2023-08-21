@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 import '../../utils/app_colors.dart';
-import '../user/falaj_details_screen.dart';
 import 'owner_falaj_details_screen.dart';
 
 class MyFalajScreen extends StatelessWidget {
@@ -36,9 +36,9 @@ class MyFalajScreen extends StatelessWidget {
             //  color: AppColors.colorBlackHighEmp,
           ),
         ),
-        title: const Text(
-          "My Falaj",
-          style: TextStyle(
+        title: Text(
+          "myFalaj".tr,
+          style: const TextStyle(
             fontWeight: FontWeight.w600,
             color: AppColors.colorBlackHighEmp,
           ),

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 import 'owner_falaj_details_screen.dart';
 
@@ -77,38 +78,35 @@ class OwnerHomeScreen extends StatelessWidget {
                 children: [
                   SizedBox(height: 12.h),
                   Padding(
-                    padding: REdgeInsets.only(left: 16),
+                    padding: REdgeInsets.only(left: 16, right: 16),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "My Falaj",
+                          "myFalaj".tr,
                           style: TextStyle(
                             fontSize: 16.sp,
                             fontWeight: FontWeight.w600,
                             color: AppColors.colorBlackHighEmp,
                           ),
                         ),
-                        TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => MyFalajScreen()));
-                          },
-                          style: TextButton.styleFrom(
-                              //padding: const EdgeInsets.all(8),
-                              minimumSize: const Size(50, 20),
-                              tapTargetSize: MaterialTapTargetSize.shrinkWrap),
-                          child: Text(
-                            'See All',
-                            style: TextStyle(
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.colorPrimary,
+                         InkWell(
+                           onTap: () {
+                             Navigator.push(
+                                 context,
+                                 MaterialPageRoute(
+                                     builder: (context) => MyFalajScreen()));
+                           },
+                           child: Text(
+                              'See All',
+                              style: TextStyle(
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w400,
+                                color: AppColors.colorPrimary,
+                              ),
                             ),
-                          ),
-                        ),
+                         ),
+
                       ],
                     ),
                   ),

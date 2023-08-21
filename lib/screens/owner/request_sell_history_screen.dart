@@ -1,12 +1,9 @@
-import 'package:falaj_user_app/design_models/users_bottom_nav.dart';
-import 'package:falaj_user_app/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
-import '../../design_models/remember_me_model.dart';
 import '../../utils/app_colors.dart';
-import '../../utils/my_button.dart';
 
 class CustomSegmentedControl extends StatelessWidget {
   final List<String> segments;
@@ -118,9 +115,9 @@ class _RequestSellHistoryScreenState extends State<RequestSellHistoryScreen> {
           color: AppColors.colorWhiteHighEmp, // Set a fixed color here
         ),
         automaticallyImplyLeading: false,
-        title: const Text(
-          "Request for Sale History",
-          style: TextStyle(
+        title: Text(
+          "reqForSaleHistory".tr,
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
             color: AppColors.colorBlackHighEmp,
           ),
@@ -283,10 +280,10 @@ class _RequestSellHistoryScreenState extends State<RequestSellHistoryScreen> {
                     children: [
                       ...List.generate(
                         _images.length,
-                            (index) => Card(
+                        (index) => Card(
                           shadowColor: AppColors.colorGrey,
                           margin:
-                          REdgeInsets.only(left: 16, right: 16, bottom: 12),
+                              REdgeInsets.only(left: 16, right: 16, bottom: 12),
                           color: AppColors.colorWhiteHighEmp,
                           elevation: 3,
                           child: Container(
@@ -305,11 +302,11 @@ class _RequestSellHistoryScreenState extends State<RequestSellHistoryScreen> {
                                   SizedBox(width: 12.w),
                                   Column(
                                     crossAxisAlignment:
-                                    CrossAxisAlignment.start,
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Row(
                                         mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
                                             "Al Yalham Falaj",
@@ -317,7 +314,7 @@ class _RequestSellHistoryScreenState extends State<RequestSellHistoryScreen> {
                                               fontSize: 14.sp,
                                               fontWeight: FontWeight.w600,
                                               color:
-                                              AppColors.colorBlackHighEmp,
+                                                  AppColors.colorBlackHighEmp,
                                             ),
                                           ),
                                           SizedBox(width: 45.w),
@@ -377,7 +374,7 @@ class _RequestSellHistoryScreenState extends State<RequestSellHistoryScreen> {
                                                     ? AppColors.colorRedLight
                                                     : AppColors.colorGreenLight,
                                                 borderRadius:
-                                                BorderRadius.circular(48)),
+                                                    BorderRadius.circular(48)),
                                             child: Text(
                                               _text[index],
                                               style: TextStyle(
@@ -403,10 +400,10 @@ class _RequestSellHistoryScreenState extends State<RequestSellHistoryScreen> {
                     children: [
                       ...List.generate(
                         _images.length,
-                            (index) => Card(
+                        (index) => Card(
                           shadowColor: AppColors.colorGrey,
                           margin:
-                          REdgeInsets.only(left: 16, right: 16, bottom: 12),
+                              REdgeInsets.only(left: 16, right: 16, bottom: 12),
                           color: AppColors.colorWhiteHighEmp,
                           elevation: 3,
                           child: Container(
@@ -425,11 +422,11 @@ class _RequestSellHistoryScreenState extends State<RequestSellHistoryScreen> {
                                   SizedBox(width: 12.w),
                                   Column(
                                     crossAxisAlignment:
-                                    CrossAxisAlignment.start,
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Row(
                                         mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
                                             "Al Yalham Falaj",
@@ -437,7 +434,7 @@ class _RequestSellHistoryScreenState extends State<RequestSellHistoryScreen> {
                                               fontSize: 14.sp,
                                               fontWeight: FontWeight.w600,
                                               color:
-                                              AppColors.colorBlackHighEmp,
+                                                  AppColors.colorBlackHighEmp,
                                             ),
                                           ),
                                           SizedBox(width: 45.w),
@@ -497,7 +494,7 @@ class _RequestSellHistoryScreenState extends State<RequestSellHistoryScreen> {
                                                     ? AppColors.colorRedLight
                                                     : AppColors.colorGreenLight,
                                                 borderRadius:
-                                                BorderRadius.circular(48)),
+                                                    BorderRadius.circular(48)),
                                             child: Text(
                                               _text[index],
                                               style: TextStyle(
@@ -523,10 +520,10 @@ class _RequestSellHistoryScreenState extends State<RequestSellHistoryScreen> {
                     children: [
                       ...List.generate(
                         _images.length,
-                            (index) => Card(
+                        (index) => Card(
                           shadowColor: AppColors.colorGrey,
                           margin:
-                          REdgeInsets.only(left: 16, right: 16, bottom: 12),
+                              REdgeInsets.only(left: 16, right: 16, bottom: 12),
                           color: AppColors.colorWhiteHighEmp,
                           elevation: 3,
                           child: Container(
@@ -545,11 +542,11 @@ class _RequestSellHistoryScreenState extends State<RequestSellHistoryScreen> {
                                   SizedBox(width: 12.w),
                                   Column(
                                     crossAxisAlignment:
-                                    CrossAxisAlignment.start,
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Row(
                                         mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
                                             "Al Yalham Falaj",
@@ -557,7 +554,7 @@ class _RequestSellHistoryScreenState extends State<RequestSellHistoryScreen> {
                                               fontSize: 14.sp,
                                               fontWeight: FontWeight.w600,
                                               color:
-                                              AppColors.colorBlackHighEmp,
+                                                  AppColors.colorBlackHighEmp,
                                             ),
                                           ),
                                           SizedBox(width: 45.w),
@@ -617,7 +614,7 @@ class _RequestSellHistoryScreenState extends State<RequestSellHistoryScreen> {
                                                     ? AppColors.colorRedLight
                                                     : AppColors.colorGreenLight,
                                                 borderRadius:
-                                                BorderRadius.circular(48)),
+                                                    BorderRadius.circular(48)),
                                             child: Text(
                                               _text[index],
                                               style: TextStyle(

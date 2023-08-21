@@ -54,7 +54,6 @@
   "changeLanguage": "تغيير اللغة",
   "wallet": "المحفظة",
   "payoutReq": "طلب  سحب الاموال",
-
   "enterAmount": "ادخل المبلغ",
   "paymentMethod": "طريقة الدفع",
   "legalName": "الاسم القانوني الكامل",
@@ -62,7 +61,17 @@
   "anyOtherDetails": "اي تفاصيل اضافية للبنك",
   "reqNow": "اطلب  الان",
   "reqSuccess": "تم  طلبك بنجاح",
-  "receiveFund": "سوف تستلم الملبغ  خلال  ايام"
+  "receiveFund": "سوف تستلم الملبغ  خلال  ايام",
+  "myFalaj": "افلاجي",
+  "reqForSaleHistory": "سجل الطلبات",
+
+  "ownedTime": "الوقت المملوك",
+  "reqForSale": "طلب  للايجار",
+  "reqForSale2": "طلب  للاجيار",
+  "activeHours": "الساعات النشطة",
+  "rentAmount": "اجمالي الايجار",
+  "reqSubmit": "تم تقديم طلبك للبيع",
+  "close": "يغلق"
 
 
 }
