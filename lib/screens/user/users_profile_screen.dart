@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -63,7 +64,7 @@ class _UsersProfileScreenState extends State<UsersProfileScreen> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  "Change language",
+                  "changeLanguage".tr,
                   style: TextStyle(
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w800,
@@ -160,9 +161,9 @@ class _UsersProfileScreenState extends State<UsersProfileScreen> {
             color: AppColors.colorWhiteHighEmp, // Set a fixed color here
           ),
           automaticallyImplyLeading: false,
-          title: const Text(
-            "Profile",
-            style: TextStyle(
+          title: Text(
+            "profile".tr,
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
               color: AppColors.colorBlackHighEmp,
             ),
@@ -289,7 +290,7 @@ class _UsersProfileScreenState extends State<UsersProfileScreen> {
                         ),
                         SizedBox(width: 12.w),
                         Text(
-                          "Push Notification",
+                          "pushNotification".tr,
                           style: TextStyle(
                             fontSize: 16.sp,
                             fontWeight: FontWeight.w700,
@@ -333,7 +334,7 @@ class _UsersProfileScreenState extends State<UsersProfileScreen> {
                           ),
                           SizedBox(width: 12.w),
                           Text(
-                            "Payment History",
+                            "paymentHistory".tr,
                             style: TextStyle(
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w700,
@@ -367,7 +368,7 @@ class _UsersProfileScreenState extends State<UsersProfileScreen> {
                           const Icon(Icons.g_translate),
                           SizedBox(width: 12.w),
                           Text(
-                            "Language Settings",
+                            "languageSettings".tr,
                             style: TextStyle(
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w700,
@@ -405,7 +406,7 @@ class _UsersProfileScreenState extends State<UsersProfileScreen> {
                           ),
                           SizedBox(width: 12.w),
                           Text(
-                            "Terms of Use",
+                            "termsOfUse".tr,
                             style: TextStyle(
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w700,
@@ -441,7 +442,7 @@ class _UsersProfileScreenState extends State<UsersProfileScreen> {
                           ),
                           SizedBox(width: 12.w),
                           Text(
-                            "Privacy Policy",
+                            "privacy".tr,
                             style: TextStyle(
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w700,
@@ -477,7 +478,7 @@ class _UsersProfileScreenState extends State<UsersProfileScreen> {
                           ),
                           SizedBox(width: 12.w),
                           Text(
-                            "Help & FAQ",
+                            "helpFaq".tr,
                             style: TextStyle(
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w700,
@@ -517,7 +518,7 @@ class _UsersProfileScreenState extends State<UsersProfileScreen> {
                       ),
                       SizedBox(width: 12.w),
                       Text(
-                        "Log Out",
+                        "logOut".tr,
                         style: TextStyle(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w700,

@@ -38,9 +38,20 @@
   "totalAmount": "Total amount",
   "selectedPaymentMethod": "Selected Payment Method",
   "continue": "Continue",
-  "congrats": "Congrats!",
+  "congratss": "Congrats!",
   "success": "Your payment went successfully",
-  "backToHome": "Back to Home"
+  "backToHome": "Back to Home",
+  "rentedFalaj": "Rented Falaj’s",
+  "ongoing": "Ongoing",
+  "cancelled": "Cancelled",
+  "pushNotification": "Push Notification",
+  "paymentHistory": "Payment History",
+  "languageSettings": "Language Settings",
+  "termsOfUse": "Terms of Use",
+  "privacy": "Privacy Policy",
+  "helpFaq": "Help & FAQ",
+  "logOut": "Log Out",
+  "changeLanguage": "Change language"
 
 
 }

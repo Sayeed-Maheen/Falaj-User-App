@@ -1,12 +1,9 @@
-import 'package:falaj_user_app/design_models/users_bottom_nav.dart';
-import 'package:falaj_user_app/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
-import '../../design_models/remember_me_model.dart';
 import '../../utils/app_colors.dart';
-import '../../utils/my_button.dart';
 
 class CustomSegmentedControl extends StatelessWidget {
   final List<String> segments;
@@ -114,9 +111,9 @@ class _RentedFalajScreenState extends State<RentedFalajScreen> {
           color: AppColors.colorWhiteHighEmp, // Set a fixed color here
         ),
         automaticallyImplyLeading: false,
-        title: const Text(
-          "Rented Falaj’s",
-          style: TextStyle(
+        title: Text(
+          "rentedFalaj".tr,
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
             color: AppColors.colorBlackHighEmp,
           ),
@@ -127,7 +124,7 @@ class _RentedFalajScreenState extends State<RentedFalajScreen> {
           children: [
             SizedBox(height: 16.h),
             CustomSegmentedControl(
-              segments: const ["Ongoing", "Cancelled"],
+              segments:  ["ongoing".tr, "cancelled".tr],
               currentIndex: _currentSelection,
               onSegmentTapped: (index) {
                 setState(() {
