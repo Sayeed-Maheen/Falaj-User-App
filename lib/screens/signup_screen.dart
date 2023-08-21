@@ -127,7 +127,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   width: 182.w,
                 ),
                 Text(
-                  "Submitted",
+                  "submitted".tr,
                   style: TextStyle(
                     fontSize: 32.sp,
                     fontWeight: FontWeight.w800,
@@ -136,7 +136,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 ),
                 SizedBox(height: 2.h),
                 Text(
-                  "Your account was created successfully",
+                  "accountCreated".tr,
                   style: TextStyle(
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w400,
@@ -154,7 +154,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         ModalRoute.withName('/'),
                       );
                     },
-                    text: "Continue to Homepage")
+                    text: "gotIt".tr)
               ],
             ),
           ),
@@ -189,7 +189,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   width: 182.w,
                 ),
                 Text(
-                  "Congratulation",
+                  "congrats".tr,
                   style: TextStyle(
                     fontSize: 32.sp,
                     fontWeight: FontWeight.w800,
@@ -216,7 +216,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         ModalRoute.withName('/'),
                       );
                     },
-                    text: "Continue to Homepage")
+                    text: "continueHomepage".tr)
               ],
             ),
           ),

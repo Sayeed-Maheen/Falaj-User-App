@@ -11,14 +11,17 @@
   "yourName": "الاسم",
   "createPassword": "انشاء كلمة  السر",
   "rewritePassword": "اعادة كتابة  كلمة السر",
-
   "favouriteBookApp": "لافضل  تطبيق بادارة الافلاج",
   "owner": "مالك",
   "user": "مستخدم",
   "rememberMe": "تذكرني",
-
   "falajName": "اسم الفلج",
   "legalDocument": "الاوراق القانونية",
   "uploadHere": "تحميل",
-  "signup": "التسجيل"
+  "signup": "التسجيل",
+  "congrats": "نهنئك , قد  تم  انشاء حسابك  بنجاح",
+  "continueHomepage": "الاستمرار  للصفحة الرئيسية",
+  "submitted": "قدم",
+  "accountCreated": "سنقوم  باعلامك  عند الموافقة",
+  "gotIt": "تم"
 }
