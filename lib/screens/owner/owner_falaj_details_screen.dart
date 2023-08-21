@@ -421,24 +421,39 @@ class _OwnerFalajDetailsScreenState extends State<OwnerFalajDetailsScreen> {
               ),
               Positioned(
                   top: 45,
-                  child: IconButton(
-                    onPressed: () => Navigator.pop(context),
-                    icon: const Icon(
-                      Icons.arrow_back,
-                      color: AppColors.colorWhiteHighEmp,
+                  child: SizedBox(
+                    width: 360.w,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        IconButton(
+                          onPressed: () => Navigator.pop(context),
+                          icon: const Icon(
+                            Icons.arrow_back,
+                            color: AppColors.colorWhiteHighEmp,
+                          ),
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.more_vert,
+                            color: AppColors.colorWhiteHighEmp,
+                          ),
+                        ),
+                      ],
                     ),
                   )),
-              Positioned(
-                top: 45,
-                right: 0,
-                child: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.more_vert,
-                    color: AppColors.colorWhiteHighEmp,
-                  ),
-                ),
-              ),
+              // Positioned(
+              //   top: 45,
+              //   right: 0,
+              //   child: IconButton(
+              //     onPressed: () {},
+              //     icon: const Icon(
+              //       Icons.more_vert,
+              //       color: AppColors.colorWhiteHighEmp,
+              //     ),
+              //   ),
+              // ),
             ],
           ),
           Expanded(
