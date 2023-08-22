@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:readmore/readmore.dart';
 
 class FalajDetailsScreen extends StatefulWidget {
   const FalajDetailsScreen({Key? key}) : super(key: key);
@@ -22,14 +23,6 @@ class _FalajDetailsScreenState extends State<FalajDetailsScreen> {
         statusBarIconBrightness: Brightness.light,
       ),
     );
-    const String initialText =
-        "quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis."
-        "Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis."
-        "Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum."
-        "Morbi a eleifend magna.";
-
-    const String remainingText =
-        "Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum. Morbi a eleifend magna.";
 
     return Scaffold(
       backgroundColor: AppColors.colorWhiteHighEmp,
@@ -119,7 +112,7 @@ class _FalajDetailsScreenState extends State<FalajDetailsScreen> {
                   ),
                   SizedBox(height: 16.h),
                   Text(
-                      "availableTime".tr,
+                    "availableTime".tr,
                     style: TextStyle(
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w700,
@@ -158,23 +151,17 @@ class _FalajDetailsScreenState extends State<FalajDetailsScreen> {
                     ),
                   ),
                   SizedBox(height: 12.h),
-                  Text(
-                    showFullText ? initialText + remainingText : initialText,
+                  ReadMoreText(
+                    "quis eros tempus lacinia. Nam bibendum pellentesque quam a convallis. Sed ut vulputate nisi. Integer in felis sed leo vestibulum venenatis. Suspendisse quis arcu sem. Aenean feugiat ex eu vestibulum vestibulum.",
+                    trimLines: 2,
+                    colorClickableText: AppColors.colorPrimary,
+                    trimMode: TrimMode.Line,
+                    trimCollapsedText: 'Read more',
+                    trimExpandedText: 'Read less',
                     style: TextStyle(
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w400,
                       color: AppColors.colorBlackLowerEmp,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        showFullText = !showFullText;
-                      });
-                    },
-                    child: Text(
-                      showFullText ? "Read less" : "Read more",
-                      style: const TextStyle(color: AppColors.colorPrimary),
                     ),
                   ),
                 ]),
