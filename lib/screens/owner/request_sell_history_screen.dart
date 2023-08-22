@@ -25,51 +25,55 @@ class CustomSegmentedControl extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: REdgeInsets.symmetric(horizontal: 12),
+
       decoration: BoxDecoration(
         borderRadius: borderRadius,
       ),
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
-          children: List.generate(
-            segments.length,
-            (index) => Row(
-              children: [
-                GestureDetector(
-                  onTap: () => onSegmentTapped(index),
-                  child: Container(
-                    height: 32.h,
-                    width: tabWidth.w, // Use the tab width property here
-                    decoration: BoxDecoration(
-                      color: currentIndex == index
-                          ? AppColors.colorPrimary
-                          : Colors.transparent,
-                      borderRadius:
-                          currentIndex == index ? borderRadius : borderRadius,
-                      border: Border.all(
-                        color: currentIndex != index
-                            ? AppColors.colorGreyLighter
+          children: [
+            SizedBox(width: 16.w),
+            ...List.generate(
+              segments.length,
+                  (index) => Row(
+                children: [
+                  GestureDetector(
+                    onTap: () => onSegmentTapped(index),
+                    child: Container(
+                      height: 32.h,
+                      width: tabWidth.w, // Use the tab width property here
+                      decoration: BoxDecoration(
+                        color: currentIndex == index
+                            ? AppColors.colorPrimary
                             : Colors.transparent,
-                        width: 1,
+                        borderRadius:
+                        currentIndex == index ? borderRadius : borderRadius,
+                        border: Border.all(
+                          color: currentIndex != index
+                              ? AppColors.colorGreyLighter
+                              : Colors.transparent,
+                          width: 1,
+                        ),
                       ),
-                    ),
-                    child: Center(
-                      child: Text(
-                        segments[index],
-                        style: TextStyle(
-                          color: currentIndex == index
-                              ? AppColors.colorWhiteHighEmp
-                              : Colors.black,
+                      child: Center(
+                        child: Text(
+                          segments[index],
+                          style: TextStyle(
+                            color: currentIndex == index
+                                ? AppColors.colorWhiteHighEmp
+                                : Colors.black,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                SizedBox(width: spacing.w), // Add spacing between tabs
-              ],
+                  SizedBox(width: spacing.w), // Add spacing between tabs
+                ],
+              ),
             ),
-          ),
+            SizedBox(width: 4.w),
+          ]
         ),
       ),
     );
