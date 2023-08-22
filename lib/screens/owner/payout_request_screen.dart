@@ -1,5 +1,5 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
-import 'package:falaj_user_app/design_models/owner_bottom_nav.dart';
+import 'package:falaj_user_app/design_models/my_bottom_nav.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -483,7 +483,7 @@ class _PayoutRequestScreenState extends State<PayoutRequestScreen> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (BuildContext context) =>
-                                        const OwnerBottomNav()),
+                                        const MyBottomNav(userRole: UserRole.owner)),
                                 ModalRoute.withName('/'));
                           },
                           child: Container(

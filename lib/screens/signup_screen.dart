@@ -1,7 +1,6 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
-import 'package:falaj_user_app/design_models/owner_bottom_nav.dart';
-import 'package:falaj_user_app/design_models/users_bottom_nav.dart';
+import 'package:falaj_user_app/design_models/my_bottom_nav.dart';
 import 'package:falaj_user_app/utils/app_colors.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -95,6 +94,8 @@ class _SignupScreenState extends State<SignupScreen> {
   var ownerObscureText = true;
   var ownerObscureText2 = true;
 
+  final UserRole _selectedRole = UserRole.user;
+
   @override
   void initState() {
     super.initState();
@@ -146,13 +147,15 @@ class _SignupScreenState extends State<SignupScreen> {
                 SizedBox(height: 24.h),
                 MyButton(
                     onPressed: () {
-                      Navigator.pushAndRemoveUntil<void>(
-                        context,
-                        MaterialPageRoute<void>(
-                            builder: (BuildContext context) =>
-                                const OwnerBottomNav()),
-                        ModalRoute.withName('/'),
-                      );
+                      if (_selectedRole == UserRole.owner) {
+                        Navigator.pushAndRemoveUntil<void>(
+                          context,
+                          MaterialPageRoute<void>(
+                              builder: (BuildContext context) =>
+                                  const MyBottomNav(userRole: UserRole.owner)),
+                          ModalRoute.withName('/'),
+                        );
+                      }
                     },
                     text: "gotIt".tr)
               ],
@@ -208,13 +211,15 @@ class _SignupScreenState extends State<SignupScreen> {
                 SizedBox(height: 24.h),
                 MyButton(
                     onPressed: () {
-                      Navigator.pushAndRemoveUntil<void>(
-                        context,
-                        MaterialPageRoute<void>(
-                            builder: (BuildContext context) =>
-                                const UsersBottomNav()),
-                        ModalRoute.withName('/'),
-                      );
+                      if (_selectedRole == UserRole.user) {
+                        Navigator.pushAndRemoveUntil<void>(
+                          context,
+                          MaterialPageRoute<void>(
+                              builder: (BuildContext context) =>
+                                  const MyBottomNav(userRole: UserRole.user)),
+                          ModalRoute.withName('/'),
+                        );
+                      }
                     },
                     text: "continueHomepage".tr)
               ],

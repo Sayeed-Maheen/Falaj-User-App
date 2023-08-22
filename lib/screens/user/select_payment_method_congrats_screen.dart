@@ -1,8 +1,8 @@
+import 'package:falaj_user_app/design_models/my_bottom_nav.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../design_models/users_bottom_nav.dart';
 import '../../utils/app_colors.dart';
 
 class SelectPaymentMethodCongratsScreen extends StatelessWidget {
@@ -47,7 +47,7 @@ class SelectPaymentMethodCongratsScreen extends StatelessWidget {
           Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(
-                  builder: (BuildContext context) => const UsersBottomNav()),
+                  builder: (BuildContext context) => const MyBottomNav(userRole: UserRole.user)),
               ModalRoute.withName('/'));
         },
         child: Container(

@@ -1,5 +1,4 @@
-import 'package:falaj_user_app/design_models/owner_bottom_nav.dart';
-import 'package:falaj_user_app/design_models/users_bottom_nav.dart';
+import 'package:falaj_user_app/design_models/my_bottom_nav.dart';
 import 'package:falaj_user_app/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -86,6 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final userPasswordController = TextEditingController();
   var userObscureText = true;
   var ownerObscureText = true;
+  final UserRole _selectedRole = UserRole.user;
 
   @override
   void initState() {
@@ -140,7 +140,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(height: 24.h),
                 CustomSegmentedControl(
-                  segments:  ["owner".tr, "user".tr],
+                  segments: ["owner".tr, "user".tr],
                   currentIndex: _currentSelection,
                   onSegmentTapped: (index) {
                     setState(() {
@@ -352,16 +352,23 @@ class _LoginScreenState extends State<LoginScreen> {
                                 padding: REdgeInsets.symmetric(horizontal: 16),
                                 child: MyButton(
                                     onPressed: () {
-                                      if (_formField.currentState!.validate()) {
-                                        ownerEmailController.clear();
-                                        ownerPasswordController.clear();
-                                        Navigator.pushAndRemoveUntil<void>(
-                                          context,
-                                          MaterialPageRoute<void>(
-                                              builder: (BuildContext context) =>
-                                                  const OwnerBottomNav()),
-                                          ModalRoute.withName('/'),
-                                        );
+                                      if (_selectedRole == UserRole.user) {
+                                        if (_formField.currentState!
+                                            .validate()) {
+                                          ownerEmailController.clear();
+                                          ownerPasswordController.clear();
+                                          Navigator.pushAndRemoveUntil<void>(
+                                            context,
+                                            MaterialPageRoute<void>(
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        const MyBottomNav(
+                                                          userRole:
+                                                              UserRole.owner,
+                                                        )),
+                                            ModalRoute.withName('/'),
+                                          );
+                                        }
                                       }
                                     },
                                     text: "signIn".tr),
@@ -599,16 +606,22 @@ class _LoginScreenState extends State<LoginScreen> {
                                 padding: REdgeInsets.symmetric(horizontal: 16),
                                 child: MyButton(
                                     onPressed: () {
-                                      if (_formField.currentState!.validate()) {
-                                        userEmailController.clear();
-                                        userPasswordController.clear();
-                                        Navigator.pushAndRemoveUntil<void>(
-                                          context,
-                                          MaterialPageRoute<void>(
-                                              builder: (BuildContext context) =>
-                                                  const UsersBottomNav()),
-                                          ModalRoute.withName('/'),
-                                        );
+                                      if (_selectedRole == UserRole.user) {
+                                        if (_formField.currentState!
+                                            .validate()) {
+                                          userEmailController.clear();
+                                          userPasswordController.clear();
+                                          Navigator.pushAndRemoveUntil<void>(
+                                            context,
+                                            MaterialPageRoute<void>(
+                                                builder:
+                                                    (BuildContext context) =>
+                                                        const MyBottomNav(
+                                                            userRole:
+                                                                UserRole.user)),
+                                            ModalRoute.withName('/'),
+                                          );
+                                        }
                                       }
                                     },
                                     text: "signIn".tr),

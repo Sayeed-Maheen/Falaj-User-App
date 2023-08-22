@@ -10,19 +10,22 @@ import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../constant/app_constant.dart';
-import '../../controllers/language_controller.dart';
-import '../../utils/app_colors.dart';
-import '../login_screen.dart';
+import '../constant/app_constant.dart';
+import '../controllers/language_controller.dart';
+import '../design_models/my_bottom_nav.dart';
+import '../utils/app_colors.dart';
+import 'login_screen.dart';
+import 'owner/wallet_screen.dart';
 
-class UsersProfileScreen extends StatefulWidget {
-  const UsersProfileScreen({super.key});
+class ProfileScreen extends StatefulWidget {
+  final UserRole userRole;
+  const ProfileScreen({super.key, required this.userRole});
 
   @override
-  State<UsersProfileScreen> createState() => _UsersProfileScreenState();
+  State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
-class _UsersProfileScreenState extends State<UsersProfileScreen> {
+class _ProfileScreenState extends State<ProfileScreen> {
   void _saveLanguage(String languageCode) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setString('language', languageCode);
@@ -321,41 +324,82 @@ class _UsersProfileScreenState extends State<UsersProfileScreen> {
                   ),
                 ),
                 SizedBox(height: 24.h),
-                InkWell(
-                  onTap: () {},
-                  child: SizedBox(
-                    height: 24.h,
-                    width: double.infinity,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            SvgPicture.asset(
-                              "assets/images/payment_history.svg",
-                              height: 20.h,
-                              width: 20.w,
-                            ),
-                            SizedBox(width: 12.w),
-                            Text(
-                              "paymentHistory".tr,
-                              style: TextStyle(
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w700,
-                                color: AppColors.colorBlackHighEmp,
+                widget.userRole == UserRole.owner
+                    ? InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const WalletScreen()));
+                        },
+                        child: SizedBox(
+                          height: 24.h,
+                          width: double.infinity,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  SvgPicture.asset(
+                                    "assets/images/wallet.svg",
+                                    height: 20.h,
+                                    width: 20.w,
+                                  ),
+                                  SizedBox(width: 12.w),
+                                  Text(
+                                    "wallet".tr,
+                                    style: TextStyle(
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.w700,
+                                      color: AppColors.colorBlackHighEmp,
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ),
-                          ],
+                              const Icon(
+                                Icons.arrow_forward_ios_rounded,
+                                color: AppColors.colorGreyDark,
+                                size: 20,
+                              )
+                            ],
+                          ),
                         ),
-                        const Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: AppColors.colorGreyDark,
-                          size: 20,
-                        )
-                      ],
-                    ),
-                  ),
-                ),
+                      )
+                    : InkWell(
+                        onTap: () {},
+                        child: SizedBox(
+                          height: 24.h,
+                          width: double.infinity,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  SvgPicture.asset(
+                                    "assets/images/payment_history.svg",
+                                    height: 20.h,
+                                    width: 20.w,
+                                  ),
+                                  SizedBox(width: 12.w),
+                                  Text(
+                                    "paymentHistory".tr,
+                                    style: TextStyle(
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.w700,
+                                      color: AppColors.colorBlackHighEmp,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const Icon(
+                                Icons.arrow_forward_ios_rounded,
+                                color: AppColors.colorGreyDark,
+                                size: 20,
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
                 SizedBox(height: 24.h),
                 InkWell(
                   onTap: () {

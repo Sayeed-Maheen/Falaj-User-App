@@ -5,14 +5,14 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../utils/app_colors.dart';
 
-class OwnerChatScreen extends StatefulWidget {
-  const OwnerChatScreen({Key? key}) : super(key: key);
+class ChatScreen extends StatefulWidget {
+  const ChatScreen({Key? key}) : super(key: key);
 
   @override
-  State<OwnerChatScreen> createState() => _OwnerChatScreenState();
+  State<ChatScreen> createState() => _ChatScreenState();
 }
 
-class _OwnerChatScreenState extends State<OwnerChatScreen>
+class _ChatScreenState extends State<ChatScreen>
     with SingleTickerProviderStateMixin, WidgetsBindingObserver {
   final _textController = TextEditingController();
   final _scrollController = ScrollController();

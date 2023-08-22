@@ -1,6 +1,8 @@
-import 'package:falaj_user_app/screens/user/users_profile_screen.dart';
+import 'package:falaj_user_app/screens/inbox_screen.dart';
+import 'package:falaj_user_app/screens/owner/owner_home_screen.dart';
+import 'package:falaj_user_app/screens/owner/request_sell_history_screen.dart';
+import 'package:falaj_user_app/screens/profile_screen.dart';
 import 'package:falaj_user_app/screens/user/rented_falaj_screen.dart';
-import 'package:falaj_user_app/screens/user/users_inbox_screen.dart';
 import 'package:falaj_user_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,22 +11,40 @@ import 'package:get/get.dart';
 
 import '../screens/user/users_home_screen.dart';
 
-class UsersBottomNav extends StatefulWidget {
-  const UsersBottomNav({Key? key}) : super(key: key);
-
-  @override
-  State<UsersBottomNav> createState() => _UsersBottomNavState();
+enum UserRole {
+  user,
+  owner,
 }
 
-class _UsersBottomNavState extends State<UsersBottomNav> {
-  int _currentIndex = 0;
+class MyBottomNav extends StatefulWidget {
+  final UserRole userRole;
+  const MyBottomNav({Key? key, required this.userRole}) : super(key: key);
 
-  final tabs = [
-    UsersHomeScreen(),
-    const RentedFalajScreen(),
-    UsersInboxScreen(),
-    const UsersProfileScreen()
-  ];
+  @override
+  State<MyBottomNav> createState() => _MyBottomNavState();
+}
+
+class _MyBottomNavState extends State<MyBottomNav> {
+  int _currentIndex = 0;
+  late final List<Widget> tabs;
+
+  @override
+  void initState() {
+    super.initState();
+
+    tabs = [
+      if (widget.userRole == UserRole.owner)
+        OwnerHomeScreen()
+      else
+        UsersHomeScreen(),
+      if (widget.userRole == UserRole.owner)
+        const RequestSellHistoryScreen()
+      else
+        const RentedFalajScreen(),
+      InboxScreen(),
+      ProfileScreen(userRole: widget.userRole),
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,23 +81,29 @@ class _UsersBottomNavState extends State<UsersBottomNav> {
             items: [
               BottomNavigationBarItem(
                 icon: SvgPicture.asset(
-                  "assets/images/home.svg",
+                  widget.userRole == UserRole.owner
+                      ? "assets/images/my_falaj.svg"
+                      : "assets/images/home.svg",
                   height: 24.h,
                   width: 24.w,
                   color:
                       _currentIndex == 0 ? AppColors.colorPrimary : Colors.grey,
                 ),
-                label: "home".tr,
+                label:
+                    widget.userRole == UserRole.owner ? "My Falaj" : "home".tr,
               ),
               BottomNavigationBarItem(
                 icon: SvgPicture.asset(
-                  "assets/images/heart.svg",
+                  widget.userRole == UserRole.owner
+                      ? "assets/images/req.svg"
+                      : "assets/images/heart.svg",
                   height: 24.h,
                   width: 24.w,
                   color:
                       _currentIndex == 1 ? AppColors.colorPrimary : Colors.grey,
                 ),
-                label: "rented".tr,
+                label:
+                    widget.userRole == UserRole.owner ? "Request" : "rented".tr,
               ),
               BottomNavigationBarItem(
                 icon: SvgPicture.asset(

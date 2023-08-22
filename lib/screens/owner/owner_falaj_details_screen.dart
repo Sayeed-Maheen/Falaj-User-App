@@ -1,5 +1,3 @@
-import 'package:falaj_user_app/design_models/owner_bottom_nav.dart';
-import 'package:falaj_user_app/screens/owner/request_sell_history_screen.dart';
 import 'package:falaj_user_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -7,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-import '../../design_models/users_bottom_nav.dart';
+import '../../design_models/my_bottom_nav.dart';
 
 class OwnerFalajDetailsScreen extends StatefulWidget {
   const OwnerFalajDetailsScreen({Key? key}) : super(key: key);
@@ -361,7 +359,7 @@ class _OwnerFalajDetailsScreenState extends State<OwnerFalajDetailsScreen> {
                       context,
                       MaterialPageRoute<void>(
                           builder: (BuildContext context) =>
-                              const OwnerBottomNav()),
+                               const MyBottomNav(userRole: UserRole.owner)),
                       ModalRoute.withName('/'),
                     );
                   },
