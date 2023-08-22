@@ -5,6 +5,7 @@ import 'package:falaj_user_app/screens/profile_screen.dart';
 import 'package:falaj_user_app/screens/user/rented_falaj_screen.dart';
 import 'package:falaj_user_app/utils/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -48,6 +49,11 @@ class _MyBottomNavState extends State<MyBottomNav> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarIconBrightness: Brightness.dark,
+      ),
+    );
     return Scaffold(
       body: tabs[_currentIndex],
       bottomNavigationBar: Container(
