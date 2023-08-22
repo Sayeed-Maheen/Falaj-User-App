@@ -25,56 +25,53 @@ class CustomSegmentedControl extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-
       decoration: BoxDecoration(
         borderRadius: borderRadius,
       ),
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
-        child: Row(
-          children: [
-            SizedBox(width: 16.w),
-            ...List.generate(
-              segments.length,
-                  (index) => Row(
-                children: [
-                  GestureDetector(
-                    onTap: () => onSegmentTapped(index),
-                    child: Container(
-                      height: 32.h,
-                      width: tabWidth.w, // Use the tab width property here
-                      decoration: BoxDecoration(
-                        color: currentIndex == index
-                            ? AppColors.colorPrimary
+        child: Row(children: [
+          SizedBox(width: 16.w),
+          ...List.generate(
+            segments.length,
+            (index) => Row(
+              children: [
+                GestureDetector(
+                  onTap: () => onSegmentTapped(index),
+                  child: Container(
+                    height: 32.h,
+                    width: tabWidth.w, // Use the tab width property here
+                    decoration: BoxDecoration(
+                      color: currentIndex == index
+                          ? AppColors.colorPrimary
+                          : Colors.transparent,
+                      borderRadius:
+                          currentIndex == index ? borderRadius : borderRadius,
+                      border: Border.all(
+                        color: currentIndex != index
+                            ? AppColors.colorGreyLighter
                             : Colors.transparent,
-                        borderRadius:
-                        currentIndex == index ? borderRadius : borderRadius,
-                        border: Border.all(
-                          color: currentIndex != index
-                              ? AppColors.colorGreyLighter
-                              : Colors.transparent,
-                          width: 1,
-                        ),
+                        width: 1,
                       ),
-                      child: Center(
-                        child: Text(
-                          segments[index],
-                          style: TextStyle(
-                            color: currentIndex == index
-                                ? AppColors.colorWhiteHighEmp
-                                : Colors.black,
-                          ),
+                    ),
+                    child: Center(
+                      child: Text(
+                        segments[index],
+                        style: TextStyle(
+                          color: currentIndex == index
+                              ? AppColors.colorWhiteHighEmp
+                              : Colors.black,
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(width: spacing.w), // Add spacing between tabs
-                ],
-              ),
+                ),
+                SizedBox(width: spacing.w), // Add spacing between tabs
+              ],
             ),
-            SizedBox(width: 4.w),
-          ]
-        ),
+          ),
+          SizedBox(width: 4.w),
+        ]),
       ),
     );
   }
@@ -107,6 +104,16 @@ class _RequestSellHistoryScreenState extends State<RequestSellHistoryScreen> {
     'Approved',
     'Pending',
     'Canceled',
+  ];
+  final List<Color> _containerColor = [
+    AppColors.colorGreenLight,
+    Colors.orangeAccent.withOpacity(0.3),
+    AppColors.colorRedLight,
+  ];
+  final List<Color> _textColor = [
+    AppColors.colorGreen,
+    Colors.orangeAccent,
+    AppColors.colorRed,
   ];
 
   @override
@@ -254,9 +261,7 @@ class _RequestSellHistoryScreenState extends State<RequestSellHistoryScreen> {
                                             padding: REdgeInsets.symmetric(
                                                 horizontal: 6, vertical: 4),
                                             decoration: BoxDecoration(
-                                                color: index == _text.length - 1
-                                                    ? AppColors.colorRedLight
-                                                    : AppColors.colorGreenLight,
+                                                color: _containerColor[index],
                                                 borderRadius:
                                                     BorderRadius.circular(48)),
                                             child: Text(
@@ -264,9 +269,7 @@ class _RequestSellHistoryScreenState extends State<RequestSellHistoryScreen> {
                                               style: TextStyle(
                                                 fontSize: 10.sp,
                                                 fontWeight: FontWeight.w600,
-                                                color: index == _text.length - 1
-                                                    ? AppColors.colorRed
-                                                    : AppColors.colorGreen,
+                                                color: _textColor[index],
                                               ),
                                             ),
                                           ),
@@ -374,9 +377,7 @@ class _RequestSellHistoryScreenState extends State<RequestSellHistoryScreen> {
                                             padding: REdgeInsets.symmetric(
                                                 horizontal: 6, vertical: 4),
                                             decoration: BoxDecoration(
-                                                color: index == _text.length - 1
-                                                    ? AppColors.colorRedLight
-                                                    : AppColors.colorGreenLight,
+                                                color: _containerColor[index],
                                                 borderRadius:
                                                     BorderRadius.circular(48)),
                                             child: Text(
@@ -384,9 +385,7 @@ class _RequestSellHistoryScreenState extends State<RequestSellHistoryScreen> {
                                               style: TextStyle(
                                                 fontSize: 10.sp,
                                                 fontWeight: FontWeight.w600,
-                                                color: index == _text.length - 1
-                                                    ? AppColors.colorRed
-                                                    : AppColors.colorGreen,
+                                                color: _textColor[index],
                                               ),
                                             ),
                                           ),
@@ -494,9 +493,7 @@ class _RequestSellHistoryScreenState extends State<RequestSellHistoryScreen> {
                                             padding: REdgeInsets.symmetric(
                                                 horizontal: 6, vertical: 4),
                                             decoration: BoxDecoration(
-                                                color: index == _text.length - 1
-                                                    ? AppColors.colorRedLight
-                                                    : AppColors.colorGreenLight,
+                                                color: _containerColor[index],
                                                 borderRadius:
                                                     BorderRadius.circular(48)),
                                             child: Text(
@@ -504,9 +501,7 @@ class _RequestSellHistoryScreenState extends State<RequestSellHistoryScreen> {
                                               style: TextStyle(
                                                 fontSize: 10.sp,
                                                 fontWeight: FontWeight.w600,
-                                                color: index == _text.length - 1
-                                                    ? AppColors.colorRed
-                                                    : AppColors.colorGreen,
+                                                color: _textColor[index],
                                               ),
                                             ),
                                           ),
@@ -614,9 +609,7 @@ class _RequestSellHistoryScreenState extends State<RequestSellHistoryScreen> {
                                             padding: REdgeInsets.symmetric(
                                                 horizontal: 6, vertical: 4),
                                             decoration: BoxDecoration(
-                                                color: index == _text.length - 1
-                                                    ? AppColors.colorRedLight
-                                                    : AppColors.colorGreenLight,
+                                                color: _containerColor[index],
                                                 borderRadius:
                                                     BorderRadius.circular(48)),
                                             child: Text(
@@ -624,9 +617,7 @@ class _RequestSellHistoryScreenState extends State<RequestSellHistoryScreen> {
                                               style: TextStyle(
                                                 fontSize: 10.sp,
                                                 fontWeight: FontWeight.w600,
-                                                color: index == _text.length - 1
-                                                    ? AppColors.colorRed
-                                                    : AppColors.colorGreen,
+                                                color: _textColor[index],
                                               ),
                                             ),
                                           ),
